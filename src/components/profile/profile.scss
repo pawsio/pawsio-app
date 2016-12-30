@@ -1,5 +1,6 @@
-:local(.welcome) {
-    margin: 10% 2% 2%;
+:local(.profile) {
+    margin:  10% 2% 2%;
+    border: 1px solid black;
 
     header {
         background-color: #f4d06f;
@@ -11,4 +12,3 @@
         z-index: 1000;
     }
 }
-

@@ -56,37 +56,37 @@
 	
 	var _components2 = _interopRequireDefault(_components);
 	
-	var _services = __webpack_require__(36);
+	var _services = __webpack_require__(38);
 	
 	var _services2 = _interopRequireDefault(_services);
 	
-	var _angularUiRouter = __webpack_require__(38);
+	var _angularUiRouter = __webpack_require__(42);
 	
 	var _angularUiRouter2 = _interopRequireDefault(_angularUiRouter);
 	
-	var _angularUiRouterDefault = __webpack_require__(39);
+	var _angularUiRouterDefault = __webpack_require__(43);
 	
 	var _angularUiRouterDefault2 = _interopRequireDefault(_angularUiRouterDefault);
 	
-	__webpack_require__(40);
+	__webpack_require__(44);
 	
-	var _routes = __webpack_require__(41);
+	var _routes = __webpack_require__(45);
 	
 	var _routes2 = _interopRequireDefault(_routes);
 	
-	var _ngDialog = __webpack_require__(42);
+	var _ngDialog = __webpack_require__(46);
 	
 	var _ngDialog2 = _interopRequireDefault(_ngDialog);
 	
-	__webpack_require__(43);
+	__webpack_require__(47);
 	
-	__webpack_require__(45);
+	__webpack_require__(49);
 	
-	var _http = __webpack_require__(47);
+	var _http = __webpack_require__(51);
 	
 	var _http2 = _interopRequireDefault(_http);
 	
-	var _auth = __webpack_require__(48);
+	var _auth = __webpack_require__(52);
 	
 	var _auth2 = _interopRequireDefault(_auth);
 	
@@ -33928,8 +33928,10 @@
 		"./account/signup/signup.js": 16,
 		"./account/user-auth.js/user-auth.js": 20,
 		"./account/user/user.js": 24,
-		"./app/app.js": 28,
-		"./welcome/welcome.js": 32
+		"./all-pets/all-pets.js": 28,
+		"./app/app.js": 29,
+		"./profile/profile.js": 33,
+		"./welcome/welcome.js": 34
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -34150,6 +34152,12 @@
 /***/ },
 /* 27 */,
 /* 28 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+/***/ },
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34158,11 +34166,11 @@
 	    value: true
 	});
 	
-	var _app = __webpack_require__(29);
+	var _app = __webpack_require__(30);
 	
 	var _app2 = _interopRequireDefault(_app);
 	
-	var _app3 = __webpack_require__(30);
+	var _app3 = __webpack_require__(31);
 	
 	var _app4 = _interopRequireDefault(_app3);
 	
@@ -34179,20 +34187,26 @@
 	}
 
 /***/ },
-/* 29 */
+/* 30 */
 /***/ function(module, exports) {
 
 	module.exports = "<main>\n    <ui-view></ui-view>\n</main>\n\n";
 
 /***/ },
-/* 30 */
+/* 31 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 31 */,
-/* 32 */
+/* 32 */,
+/* 33 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+/***/ },
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34201,11 +34215,11 @@
 	    value: true
 	});
 	
-	var _welcome = __webpack_require__(33);
+	var _welcome = __webpack_require__(35);
 	
 	var _welcome2 = _interopRequireDefault(_welcome);
 	
-	var _welcome3 = __webpack_require__(34);
+	var _welcome3 = __webpack_require__(36);
 	
 	var _welcome4 = _interopRequireDefault(_welcome3);
 	
@@ -34222,20 +34236,20 @@
 	}
 
 /***/ },
-/* 33 */
+/* 35 */
 /***/ function(module, exports) {
 
-	module.exports = "<section ng-class=\"$ctrl.styles.welcome\">\n    <header>\n        <h1>Welcome to PawsIO!</h1>\n    </header> \n    <div>\n        <p>Click on the Get Strarted button below to see your dog's stats.</p>   \n        <button ui-sref=\"yourdog\">Get Started!</button>\n    </div>\n</section>\n";
+	module.exports = "<section ng-class=\"$ctrl.styles.welcome\">\n    <header>\n        <h1>Welcome to PawsIO!</h1>\n    </header> \n    <div>\n        <p>Click on the Get Strarted button below to see your dog's stats.</p>   \n        <button ui-sref=\"profile\">Get Started!</button>\n    </div>\n</section>\n";
 
 /***/ },
-/* 34 */
+/* 36 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 35 */,
-/* 36 */
+/* 37 */,
+/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34258,7 +34272,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var context = __webpack_require__(37);
+	var context = __webpack_require__(39);
 	
 	var _module = _angular2.default.module('services', []);
 	
@@ -34270,20 +34284,101 @@
 	exports.default = _module.name;
 
 /***/ },
-/* 37 */
-/***/ function(module, exports) {
+/* 39 */
+/***/ function(module, exports, __webpack_require__) {
 
+	var map = {
+		"./token-service.js": 40,
+		"./user-service.js": 41
+	};
 	function webpackContext(req) {
-		throw new Error("Cannot find module '" + req + "'.");
-	}
-	webpackContext.keys = function() { return []; };
-	webpackContext.resolve = webpackContext;
+		return __webpack_require__(webpackContextResolve(req));
+	};
+	function webpackContextResolve(req) {
+		return map[req] || (function() { throw new Error("Cannot find module '" + req + "'.") }());
+	};
+	webpackContext.keys = function webpackContextKeys() {
+		return Object.keys(map);
+	};
+	webpackContext.resolve = webpackContextResolve;
 	module.exports = webpackContext;
-	webpackContext.id = 37;
+	webpackContext.id = 39;
 
 
 /***/ },
-/* 38 */
+/* 40 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.default = tokenService;
+	tokenService.$inject = ['$window'];
+	
+	var TOKEN_NAME = 'token';
+	
+	function tokenService($window) {
+	    return {
+	        get: function get() {
+	            return $window.localStorage.getItem(TOKEN_NAME);
+	        },
+	        remove: function remove() {
+	            $window.localStorage.removeItem(TOKEN_NAME);
+	        },
+	        set: function set(token) {
+	            $window.localStorage.setItem(TOKEN_NAME, token);
+	        }
+	    };
+	}
+
+/***/ },
+/* 41 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.default = userService;
+	userService.$inject = ['tokenService', '$http', 'apiUrl'];
+	
+	function userService(token, $http, apiUrl) {
+	
+	    var current = token.get();
+	    if (current) {
+	        $http.get(apiUrl + '/auth/verify').catch(function () {
+	            return token.remove();
+	        });
+	    }
+	
+	    function credential(endpoint) {
+	        return function (credentials) {
+	            return $http.post(apiUrl + '/auth/' + endpoint, credentials).then(function (result) {
+	                token.set(result.data.token);
+	            }).catch(function (err) {
+	                throw err.data;
+	            });
+	        };
+	    }
+	
+	    return {
+	        isAuthenticated: function isAuthenticated() {
+	            return !!token.get();
+	        },
+	        logout: function logout() {
+	            token.remove();
+	        },
+	
+	        signin: credential('signin'),
+	        signup: credential('signup')
+	    };
+	}
+
+/***/ },
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*!
@@ -42632,7 +42727,7 @@
 	//# sourceMappingURL=angular-ui-router.js.map
 
 /***/ },
-/* 39 */
+/* 43 */
 /***/ function(module, exports) {
 
 	/**
@@ -42733,7 +42828,7 @@
 	})(window.angular);
 
 /***/ },
-/* 40 */
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*!
@@ -42942,7 +43037,7 @@
 	//# sourceMappingURL=stateEvents.js.map
 
 /***/ },
-/* 41 */
+/* 45 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -42964,11 +43059,36 @@
 	        component: 'welcome'
 	    });
 	
+	    $stateProvider.state({
+	        name: 'profile',
+	        url: '/profile',
+	        abstract: true,
+	        default: '.pets',
+	        // resolve: {
+	        //     pets: ['yetToBeMadeService', pets => {
+	        //         return pets.get();
+	        //     }]
+	        // },
+	        component: 'profile'
+	    });
+	
+	    $stateProvider.state({
+	        name: 'profile.pets',
+	        url: '/pets',
+	        component: 'Allpets'
+	    });
+	
+	    $stateProvider.state({
+	        name: 'profile.manage',
+	        url: '/manage',
+	        component: 'managePets'
+	    });
+	
 	    $urlRouterProvider.otherwise('/welcome');
 	}
 
 /***/ },
-/* 42 */
+/* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -43863,13 +43983,13 @@
 
 
 /***/ },
-/* 43 */
+/* 47 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(44);
+	var content = __webpack_require__(48);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(6)(content, {});
@@ -43889,7 +44009,7 @@
 	}
 
 /***/ },
-/* 44 */
+/* 48 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(5)();
@@ -43903,13 +44023,13 @@
 
 
 /***/ },
-/* 45 */
+/* 49 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(46);
+	var content = __webpack_require__(50);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(6)(content, {});
@@ -43929,7 +44049,7 @@
 	}
 
 /***/ },
-/* 46 */
+/* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(5)();
@@ -43943,7 +44063,7 @@
 
 
 /***/ },
-/* 47 */
+/* 51 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -43985,7 +44105,7 @@
 	}
 
 /***/ },
-/* 48 */
+/* 52 */
 /***/ function(module, exports) {
 
 	'use strict';
