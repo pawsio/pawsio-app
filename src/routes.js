@@ -57,18 +57,29 @@ export default function routes($stateProvider, $urlRouterProvider) {
     });
 
     $stateProvider.state({
-        name: 'profile.pet',
+        name: 'profile.manage',
+        url: '/manage',
+        component: 'managePets'
+    });
+
+    $stateProvider.state({
+        name: 'stats',
+        url: '/stats',
+        abstract: true,
+        default: '.pet',
+        data: {
+            public: true
+        },
+        component: 'stats'
+    });
+
+    $stateProvider.state({
+        name: 'stats.pet',
         url: '/pets',
         data: {
             public: true
         },
         component: 'pet'
-    });
-
-    $stateProvider.state({
-        name: 'profile.manage',
-        url: '/manage',
-        component: 'managePets'
     });
 
     $urlRouterProvider.otherwise('/about/app');
