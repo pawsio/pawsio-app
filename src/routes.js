@@ -3,12 +3,32 @@ routes.$inject = ['$stateProvider', '$urlRouterProvider'];
 export default function routes($stateProvider, $urlRouterProvider) {
 
     $stateProvider.state({
-        name: 'welcome',
-        url: '/welcome',
+        name: 'about',
+        url: '/about',
         data: {
             public: true
         },
-        component: 'welcome' 
+        abstract: true,
+        default: '.app',
+        component: 'about' 
+    });
+
+    $stateProvider.state({
+        name: 'about.app',
+        url: '/app',
+        data: {
+            public: true
+        },
+        component: 'aboutApp' 
+    });
+
+    $stateProvider.state({
+        name: 'about.developers',
+        url: '/developers',
+        data: {
+            public: true
+        },
+        component: 'aboutDevelopers' 
     });
 
     $stateProvider.state({
@@ -37,11 +57,20 @@ export default function routes($stateProvider, $urlRouterProvider) {
     });
 
     $stateProvider.state({
+        name: 'profile.pet',
+        url: '/pets',
+        data: {
+            public: true
+        },
+        component: 'pet'
+    });
+
+    $stateProvider.state({
         name: 'profile.manage',
         url: '/manage',
         component: 'managePets'
     });
 
-    $urlRouterProvider.otherwise('/welcome');
+    $urlRouterProvider.otherwise('/about/app');
     
 }

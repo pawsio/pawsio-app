@@ -1,4 +1,4 @@
-<section ng-class="$ctrl.styles.profile">
+<section ng-class="$ctrl.styles.about">
     <header>
         <h1>PawsIO</h1>
         <nav>
@@ -6,9 +6,6 @@
             <li ui-sref="profile">Your Dogs</li>
             <li ui-sref="about">About</li>
         </nav>
-    </header>
-    <p>Profile parent content (profile) : Information about the user.<p>
-    <section>
-        <ui-view></ui-view>
-    </section>
+    </header> 
+    <ui-view></ui-view>
 </section>

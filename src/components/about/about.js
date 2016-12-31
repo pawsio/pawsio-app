@@ -1,5 +1,5 @@
-import template from './welcome.html';
-import styles from './welcome.scss';
+import template from './about.html';
+import styles from './about.scss';
 
 export default {
     template,

@@ -33924,14 +33924,14 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var map = {
-		"./account/signin/signin.js": 12,
-		"./account/signup/signup.js": 16,
-		"./account/user-auth/user-auth.js": 20,
-		"./account/user/user.js": 24,
-		"./all-pets/all-pets.js": 28,
-		"./app/app.js": 32,
-		"./profile/profile.js": 36,
-		"./welcome/welcome.js": 40
+		"./about/about.js": 12,
+		"./account/signin/signin.js": 16,
+		"./account/signup/signup.js": 20,
+		"./account/user-auth/user-auth.js": 24,
+		"./account/user/user.js": 28,
+		"./all-pets/all-pets.js": 32,
+		"./app/app.js": 36,
+		"./profile/profile.js": 40
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -33957,11 +33957,55 @@
 	    value: true
 	});
 	
-	var _signin = __webpack_require__(13);
+	var _about = __webpack_require__(13);
+	
+	var _about2 = _interopRequireDefault(_about);
+	
+	var _about3 = __webpack_require__(14);
+	
+	var _about4 = _interopRequireDefault(_about3);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	    template: _about2.default,
+	    controller: controller
+	};
+	
+	
+	function controller() {
+	    this.styles = _about4.default;
+	}
+
+/***/ },
+/* 13 */
+/***/ function(module, exports) {
+
+	module.exports = "<section ng-class=\"$ctrl.styles.about\">\n    <header>\n        <h1>PawsIO</h1>\n        <nav>\n            <li>Sign Out</li>\n            <li>Your Dogs</li>\n            <li>About</li>\n    </header> \n    <div>\n        <p>Click on the Get Strarted button below to see your dog's stats.</p>   \n        <button ui-sref=\"profile\">Get Started!</button>\n    </div>\n</section>\n";
+
+/***/ },
+/* 14 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"about":"_1YnBKp12AG3QJ19uUlXsXg"};
+
+/***/ },
+/* 15 */,
+/* 16 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _signin = __webpack_require__(17);
 	
 	var _signin2 = _interopRequireDefault(_signin);
 	
-	__webpack_require__(14);
+	__webpack_require__(18);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -33992,20 +34036,20 @@
 	}
 
 /***/ },
-/* 13 */
+/* 17 */
 /***/ function(module, exports) {
 
 	module.exports = "<section>\n\t<h2>Sign in to access your account</h2>\n\t<form name=\"auth\" ng-submit=\"$ctrl.authenticate()\">\n\t\t<div>\n\t\t\t<label>\n\t\t\t\tusername: <input required ng-model=\"$ctrl.credentials.username\">\n\t\t\t</label>\n\t\t</div>\n\n\t\t<div>\n\t\t\t<label>\n\t\t\t\tpassword: <input required type=\"password\" ng-model=\"$ctrl.credentials.password\">\n\t\t\t</label>\n\t\t</div>\n\n\t\t<button type=\"submit\">Sign In</button>\n\t</form>\n\t<div class=\"error\" ng-if='$ctrl.error'>{{$ctrl.error.reason}}</div>\n</section>\n";
 
 /***/ },
-/* 14 */
+/* 18 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 15 */,
-/* 16 */
+/* 19 */,
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34014,11 +34058,11 @@
 	    value: true
 	});
 	
-	var _signup = __webpack_require__(17);
+	var _signup = __webpack_require__(21);
 	
 	var _signup2 = _interopRequireDefault(_signup);
 	
-	__webpack_require__(18);
+	__webpack_require__(22);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -34050,54 +34094,10 @@
 	}
 
 /***/ },
-/* 17 */
-/***/ function(module, exports) {
-
-	module.exports = "<section>\n\t<h2>Sign up for the awesome todo app</h2>\n\t<form name=\"auth\" ng-submit=\"$ctrl.authenticate()\">\n\t\t<div>\n\t\t\t<label>\n\t\t\t\temail: <input required ng-model=\"$ctrl.credentials.email\">\n\t\t\t</label>\n\t\t</div>\n\n\t\t<div>\n\t\t\t<label>\n\t\t\t\tusername: <input required ng-model=\"$ctrl.credentials.username\">\n\t\t\t</label>\n\t\t</div>\n\n\t\t<div>\n\t\t\t<label>\n\t\t\t\tpassword: <input required type=\"password\" ng-model=\"$ctrl.credentials.password\">\n\t\t\t</label>\n\t\t</div>\n\n\t\t<button type=\"submit\">Sign Up</button>\n\t</form>\n\t<div class=\"error\" ng-if='$ctrl.error'>{{$ctrl.error.reason}}</div>\n</section>\n";
-
-/***/ },
-/* 18 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 19 */,
-/* 20 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _userAuth = __webpack_require__(21);
-	
-	var _userAuth2 = _interopRequireDefault(_userAuth);
-	
-	var _userAuth3 = __webpack_require__(22);
-	
-	var _userAuth4 = _interopRequireDefault(_userAuth3);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = {
-	    template: _userAuth2.default,
-	    bindings: { success: '<' },
-	    controller: controller
-	};
-	
-	
-	function controller() {
-	    this.action = 'signin';
-	}
-
-/***/ },
 /* 21 */
 /***/ function(module, exports) {
 
-	module.exports = "<section>\n    <div>\n        <label>\n            <input type=\"radio\" ng-model=\"$ctrl.action\" value=\"signin\">\n            Sign In\n        </label>\n        <label>\n            <input type=\"radio\" ng-model=\"$ctrl.action\" value=\"signup\">\n            Sign Up\n        </label>\n    </div>\n    <signin ng-if=\"$ctrl.action==='signin'\" success=\"$ctrl.success\"></signin>\n    <signup ng-if=\"$ctrl.action==='signup'\" success=\"$ctrl.success\"></signup>\n</section>\n\n";
+	module.exports = "<section>\n\t<h2>Sign up for the awesome todo app</h2>\n\t<form name=\"auth\" ng-submit=\"$ctrl.authenticate()\">\n\t\t<div>\n\t\t\t<label>\n\t\t\t\temail: <input required ng-model=\"$ctrl.credentials.email\">\n\t\t\t</label>\n\t\t</div>\n\n\t\t<div>\n\t\t\t<label>\n\t\t\t\tusername: <input required ng-model=\"$ctrl.credentials.username\">\n\t\t\t</label>\n\t\t</div>\n\n\t\t<div>\n\t\t\t<label>\n\t\t\t\tpassword: <input required type=\"password\" ng-model=\"$ctrl.credentials.password\">\n\t\t\t</label>\n\t\t</div>\n\n\t\t<button type=\"submit\">Sign Up</button>\n\t</form>\n\t<div class=\"error\" ng-if='$ctrl.error'>{{$ctrl.error.reason}}</div>\n</section>\n";
 
 /***/ },
 /* 22 */
@@ -34116,11 +34116,55 @@
 	    value: true
 	});
 	
-	var _user = __webpack_require__(25);
+	var _userAuth = __webpack_require__(25);
+	
+	var _userAuth2 = _interopRequireDefault(_userAuth);
+	
+	var _userAuth3 = __webpack_require__(26);
+	
+	var _userAuth4 = _interopRequireDefault(_userAuth3);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	    template: _userAuth2.default,
+	    bindings: { success: '<' },
+	    controller: controller
+	};
+	
+	
+	function controller() {
+	    this.action = 'signin';
+	}
+
+/***/ },
+/* 25 */
+/***/ function(module, exports) {
+
+	module.exports = "<section>\n    <div>\n        <label>\n            <input type=\"radio\" ng-model=\"$ctrl.action\" value=\"signin\">\n            Sign In\n        </label>\n        <label>\n            <input type=\"radio\" ng-model=\"$ctrl.action\" value=\"signup\">\n            Sign Up\n        </label>\n    </div>\n    <signin ng-if=\"$ctrl.action==='signin'\" success=\"$ctrl.success\"></signin>\n    <signup ng-if=\"$ctrl.action==='signup'\" success=\"$ctrl.success\"></signup>\n</section>\n\n";
+
+/***/ },
+/* 26 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 27 */,
+/* 28 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _user = __webpack_require__(29);
 	
 	var _user2 = _interopRequireDefault(_user);
 	
-	var _user3 = __webpack_require__(26);
+	var _user3 = __webpack_require__(30);
 	
 	var _user4 = _interopRequireDefault(_user3);
 	
@@ -34137,21 +34181,21 @@
 	};
 
 /***/ },
-/* 25 */
+/* 29 */
 /***/ function(module, exports) {
 
 	module.exports = "<div ng-class=\"$ctrl.styles.user\">\n\t<span>{{$ctrl.user.username}}</span>\n</div>\n";
 
 /***/ },
-/* 26 */
+/* 30 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"user":"_1IZKgvl92BktL4gSOmBmsk"};
 
 /***/ },
-/* 27 */,
-/* 28 */
+/* 31 */,
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34160,11 +34204,11 @@
 	    value: true
 	});
 	
-	var _allPets = __webpack_require__(29);
+	var _allPets = __webpack_require__(33);
 	
 	var _allPets2 = _interopRequireDefault(_allPets);
 	
-	var _allPets3 = __webpack_require__(30);
+	var _allPets3 = __webpack_require__(34);
 	
 	var _allPets4 = _interopRequireDefault(_allPets3);
 	
@@ -34181,21 +34225,21 @@
 	}
 
 /***/ },
-/* 29 */
+/* 33 */
 /***/ function(module, exports) {
 
 	module.exports = "<section ng-class=\"$ctrl.styles.pets\">\n    <p>Random content on profile/all-pets.<p>\n</section>\n";
 
 /***/ },
-/* 30 */
+/* 34 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"pets":"_3t6C2H26Y_ZvTyv5qRZtlN"};
 
 /***/ },
-/* 31 */,
-/* 32 */
+/* 35 */,
+/* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34204,11 +34248,11 @@
 	    value: true
 	});
 	
-	var _app = __webpack_require__(33);
+	var _app = __webpack_require__(37);
 	
 	var _app2 = _interopRequireDefault(_app);
 	
-	var _app3 = __webpack_require__(34);
+	var _app3 = __webpack_require__(38);
 	
 	var _app4 = _interopRequireDefault(_app3);
 	
@@ -34225,20 +34269,20 @@
 	}
 
 /***/ },
-/* 33 */
+/* 37 */
 /***/ function(module, exports) {
 
 	module.exports = "<main>\n    <ui-view></ui-view>\n</main>\n\n";
 
 /***/ },
-/* 34 */
+/* 38 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 35 */,
-/* 36 */
+/* 39 */,
+/* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34247,11 +34291,11 @@
 	    value: true
 	});
 	
-	var _profile = __webpack_require__(37);
+	var _profile = __webpack_require__(41);
 	
 	var _profile2 = _interopRequireDefault(_profile);
 	
-	var _profile3 = __webpack_require__(38);
+	var _profile3 = __webpack_require__(42);
 	
 	var _profile4 = _interopRequireDefault(_profile3);
 	
@@ -34268,61 +34312,17 @@
 	}
 
 /***/ },
-/* 37 */
-/***/ function(module, exports) {
-
-	module.exports = "<section ng-class=\"$ctrl.styles.profile\">\n    <header>\n        <h1>This is Header Content.</h1>\n    </header>\n    <p>Random content on profile parent.<p>\n    <section>\n        <ui-view></ui-view>\n    </section>\n</section>\n";
-
-/***/ },
-/* 38 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-	module.exports = {"profile":"_3z0ZR-ff-NLQoPBo8gGSQf"};
-
-/***/ },
-/* 39 */,
-/* 40 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _welcome = __webpack_require__(41);
-	
-	var _welcome2 = _interopRequireDefault(_welcome);
-	
-	var _welcome3 = __webpack_require__(42);
-	
-	var _welcome4 = _interopRequireDefault(_welcome3);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = {
-	    template: _welcome2.default,
-	    controller: controller
-	};
-	
-	
-	function controller() {
-	    this.styles = _welcome4.default;
-	}
-
-/***/ },
 /* 41 */
 /***/ function(module, exports) {
 
-	module.exports = "<section ng-class=\"$ctrl.styles.welcome\">\n    <header>\n        <h1>Welcome to PawsIO!</h1>\n    </header> \n    <div>\n        <p>Click on the Get Strarted button below to see your dog's stats.</p>   \n        <button ui-sref=\"profile\">Get Started!</button>\n    </div>\n</section>\n";
+	module.exports = "<section ng-class=\"$ctrl.styles.profile\">\n    <header>\n        <h1>This is Header Content.</h1>\n    </header>\n    <p>Random content on profile parent.<p>\n    <section>\n        <ui-view></ui-view>\n    </section>\n</section>\n";
 
 /***/ },
 /* 42 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"welcome":"_23XnJNGIuxwbbctNa1oBpu"};
+	module.exports = {"profile":"_3z0ZR-ff-NLQoPBo8gGSQf"};
 
 /***/ },
 /* 43 */,
@@ -43128,12 +43128,30 @@
 	function routes($stateProvider, $urlRouterProvider) {
 	
 	    $stateProvider.state({
-	        name: 'welcome',
-	        url: '/welcome',
+	        name: 'about',
+	        url: '/about',
 	        data: {
 	            public: true
 	        },
-	        component: 'welcome'
+	        component: 'about'
+	    });
+	
+	    $stateProvider.state({
+	        name: 'about.app',
+	        url: '/app',
+	        data: {
+	            public: true
+	        },
+	        component: 'aboutApp'
+	    });
+	
+	    $stateProvider.state({
+	        name: 'about.developers',
+	        url: '/developers',
+	        data: {
+	            public: true
+	        },
+	        component: 'aboutDevelopers'
 	    });
 	
 	    $stateProvider.state({
