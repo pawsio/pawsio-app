@@ -15,5 +15,29 @@ body {
     color: aqua;
     border: 1px solid aqua;
     padding: 10px; }
+._3t6C2H26Y_ZvTyv5qRZtlN {
+  margin: 2%;
+  border: 1px solid black; }
+._3z0ZR-ff-NLQoPBo8gGSQf {
+  margin: 10% 2% 2%;
+  border: 1px solid black; }
+  ._3z0ZR-ff-NLQoPBo8gGSQf header {
+    background-color: #f4d06f;
+    margin: 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; }
+._23XnJNGIuxwbbctNa1oBpu {
+  margin: 10% 2% 2%; }
+  ._23XnJNGIuxwbbctNa1oBpu header {
+    background-color: #f4d06f;
+    margin: 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; }
 
 /*# sourceMappingURL=main.css.map*/
