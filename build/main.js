@@ -56,37 +56,37 @@
 	
 	var _components2 = _interopRequireDefault(_components);
 	
-	var _services = __webpack_require__(44);
+	var _services = __webpack_require__(64);
 	
 	var _services2 = _interopRequireDefault(_services);
 	
-	var _angularUiRouter = __webpack_require__(48);
+	var _angularUiRouter = __webpack_require__(68);
 	
 	var _angularUiRouter2 = _interopRequireDefault(_angularUiRouter);
 	
-	var _angularUiRouterDefault = __webpack_require__(49);
+	var _angularUiRouterDefault = __webpack_require__(69);
 	
 	var _angularUiRouterDefault2 = _interopRequireDefault(_angularUiRouterDefault);
 	
-	__webpack_require__(50);
+	__webpack_require__(70);
 	
-	var _routes = __webpack_require__(51);
+	var _routes = __webpack_require__(71);
 	
 	var _routes2 = _interopRequireDefault(_routes);
 	
-	var _ngDialog = __webpack_require__(52);
+	var _ngDialog = __webpack_require__(72);
 	
 	var _ngDialog2 = _interopRequireDefault(_ngDialog);
 	
-	__webpack_require__(53);
+	__webpack_require__(73);
 	
-	__webpack_require__(55);
+	__webpack_require__(75);
 	
-	var _http = __webpack_require__(57);
+	var _http = __webpack_require__(77);
 	
 	var _http2 = _interopRequireDefault(_http);
 	
-	var _auth = __webpack_require__(58);
+	var _auth = __webpack_require__(78);
 	
 	var _auth2 = _interopRequireDefault(_auth);
 	
@@ -33924,14 +33924,19 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var map = {
-		"./about/about.js": 12,
-		"./account/signin/signin.js": 16,
-		"./account/signup/signup.js": 20,
-		"./account/user-auth/user-auth.js": 24,
-		"./account/user/user.js": 28,
-		"./all-pets/all-pets.js": 32,
-		"./app/app.js": 36,
-		"./profile/profile.js": 40
+		"./about-app/about-app.js": 12,
+		"./about-developers/about-developers.js": 16,
+		"./about/about.js": 20,
+		"./account/signin/signin.js": 24,
+		"./account/signup/signup.js": 28,
+		"./account/user-auth/user-auth.js": 32,
+		"./account/user/user.js": 36,
+		"./all-pets/all-pets.js": 40,
+		"./app/app.js": 44,
+		"./manage-pets/manage-pets.js": 48,
+		"./pet/pet.js": 52,
+		"./profile/profile.js": 56,
+		"./stats/stats.js": 60
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -33957,11 +33962,97 @@
 	    value: true
 	});
 	
-	var _about = __webpack_require__(13);
+	var _aboutApp = __webpack_require__(13);
+	
+	var _aboutApp2 = _interopRequireDefault(_aboutApp);
+	
+	var _aboutApp3 = __webpack_require__(14);
+	
+	var _aboutApp4 = _interopRequireDefault(_aboutApp3);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	    template: _aboutApp2.default,
+	    controller: controller
+	};
+	
+	
+	function controller() {
+	    this.styles = _aboutApp4.default;
+	}
+
+/***/ },
+/* 13 */
+/***/ function(module, exports) {
+
+	module.exports = "<section>\n    <button ui-sref=\"about.developers\">The Developers</button>\n    <div>\n        <p>Click on the Get Strarted button below to see your dog's stats.</p>   \n        <button ui-sref=\"profile\">Get Started!</button>\n    </div>\n</section>\n";
+
+/***/ },
+/* 14 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 15 */,
+/* 16 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _aboutDevelopers = __webpack_require__(17);
+	
+	var _aboutDevelopers2 = _interopRequireDefault(_aboutDevelopers);
+	
+	var _aboutDevelopers3 = __webpack_require__(18);
+	
+	var _aboutDevelopers4 = _interopRequireDefault(_aboutDevelopers3);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	    template: _aboutDevelopers2.default,
+	    controller: controller
+	};
+	
+	
+	function controller() {
+	    this.styles = _aboutDevelopers4.default;
+	}
+
+/***/ },
+/* 17 */
+/***/ function(module, exports) {
+
+	module.exports = "<section>\n    <div>\n        <button ui-sref=\"about\">The App</button>\n        <p>Some really compelling information about the deveopers.</p>\n    </div>\n</section>\n";
+
+/***/ },
+/* 18 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 19 */,
+/* 20 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _about = __webpack_require__(21);
 	
 	var _about2 = _interopRequireDefault(_about);
 	
-	var _about3 = __webpack_require__(14);
+	var _about3 = __webpack_require__(22);
 	
 	var _about4 = _interopRequireDefault(_about3);
 	
@@ -33978,21 +34069,21 @@
 	}
 
 /***/ },
-/* 13 */
+/* 21 */
 /***/ function(module, exports) {
 
-	module.exports = "<section ng-class=\"$ctrl.styles.about\">\n    <header>\n        <h1>PawsIO</h1>\n        <nav>\n            <li>Sign Out</li>\n            <li>Your Dogs</li>\n            <li>About</li>\n    </header> \n    <div>\n        <p>Click on the Get Strarted button below to see your dog's stats.</p>   \n        <button ui-sref=\"profile\">Get Started!</button>\n    </div>\n</section>\n";
+	module.exports = "<section ng-class=\"$ctrl.styles.about\">\n    <header>\n        <h1>PawsIO</h1>\n        <nav>\n            <li>Sign Out</li>\n            <li ui-sref=\"profile\">Your Dogs</li>\n            <li ui-sref=\"about\">About</li>\n        </nav>\n    </header>\n    <<img src=\"/img/pawsio-logo.JPG\" alt=\"PawsIO Logo\">\n    <ui-view></ui-view>\n</section>\n";
 
 /***/ },
-/* 14 */
+/* 22 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"about":"_1YnBKp12AG3QJ19uUlXsXg"};
 
 /***/ },
-/* 15 */,
-/* 16 */
+/* 23 */,
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34001,11 +34092,11 @@
 	    value: true
 	});
 	
-	var _signin = __webpack_require__(17);
+	var _signin = __webpack_require__(25);
 	
 	var _signin2 = _interopRequireDefault(_signin);
 	
-	__webpack_require__(18);
+	__webpack_require__(26);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -34036,20 +34127,20 @@
 	}
 
 /***/ },
-/* 17 */
+/* 25 */
 /***/ function(module, exports) {
 
 	module.exports = "<section>\n\t<h2>Sign in to access your account</h2>\n\t<form name=\"auth\" ng-submit=\"$ctrl.authenticate()\">\n\t\t<div>\n\t\t\t<label>\n\t\t\t\tusername: <input required ng-model=\"$ctrl.credentials.username\">\n\t\t\t</label>\n\t\t</div>\n\n\t\t<div>\n\t\t\t<label>\n\t\t\t\tpassword: <input required type=\"password\" ng-model=\"$ctrl.credentials.password\">\n\t\t\t</label>\n\t\t</div>\n\n\t\t<button type=\"submit\">Sign In</button>\n\t</form>\n\t<div class=\"error\" ng-if='$ctrl.error'>{{$ctrl.error.reason}}</div>\n</section>\n";
 
 /***/ },
-/* 18 */
+/* 26 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 19 */,
-/* 20 */
+/* 27 */,
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34058,11 +34149,11 @@
 	    value: true
 	});
 	
-	var _signup = __webpack_require__(21);
+	var _signup = __webpack_require__(29);
 	
 	var _signup2 = _interopRequireDefault(_signup);
 	
-	__webpack_require__(22);
+	__webpack_require__(30);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -34094,20 +34185,20 @@
 	}
 
 /***/ },
-/* 21 */
+/* 29 */
 /***/ function(module, exports) {
 
 	module.exports = "<section>\n\t<h2>Sign up for the awesome todo app</h2>\n\t<form name=\"auth\" ng-submit=\"$ctrl.authenticate()\">\n\t\t<div>\n\t\t\t<label>\n\t\t\t\temail: <input required ng-model=\"$ctrl.credentials.email\">\n\t\t\t</label>\n\t\t</div>\n\n\t\t<div>\n\t\t\t<label>\n\t\t\t\tusername: <input required ng-model=\"$ctrl.credentials.username\">\n\t\t\t</label>\n\t\t</div>\n\n\t\t<div>\n\t\t\t<label>\n\t\t\t\tpassword: <input required type=\"password\" ng-model=\"$ctrl.credentials.password\">\n\t\t\t</label>\n\t\t</div>\n\n\t\t<button type=\"submit\">Sign Up</button>\n\t</form>\n\t<div class=\"error\" ng-if='$ctrl.error'>{{$ctrl.error.reason}}</div>\n</section>\n";
 
 /***/ },
-/* 22 */
+/* 30 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 23 */,
-/* 24 */
+/* 31 */,
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34116,11 +34207,11 @@
 	    value: true
 	});
 	
-	var _userAuth = __webpack_require__(25);
+	var _userAuth = __webpack_require__(33);
 	
 	var _userAuth2 = _interopRequireDefault(_userAuth);
 	
-	var _userAuth3 = __webpack_require__(26);
+	var _userAuth3 = __webpack_require__(34);
 	
 	var _userAuth4 = _interopRequireDefault(_userAuth3);
 	
@@ -34138,20 +34229,20 @@
 	}
 
 /***/ },
-/* 25 */
+/* 33 */
 /***/ function(module, exports) {
 
 	module.exports = "<section>\n    <div>\n        <label>\n            <input type=\"radio\" ng-model=\"$ctrl.action\" value=\"signin\">\n            Sign In\n        </label>\n        <label>\n            <input type=\"radio\" ng-model=\"$ctrl.action\" value=\"signup\">\n            Sign Up\n        </label>\n    </div>\n    <signin ng-if=\"$ctrl.action==='signin'\" success=\"$ctrl.success\"></signin>\n    <signup ng-if=\"$ctrl.action==='signup'\" success=\"$ctrl.success\"></signup>\n</section>\n\n";
 
 /***/ },
-/* 26 */
+/* 34 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 27 */,
-/* 28 */
+/* 35 */,
+/* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34160,11 +34251,11 @@
 	    value: true
 	});
 	
-	var _user = __webpack_require__(29);
+	var _user = __webpack_require__(37);
 	
 	var _user2 = _interopRequireDefault(_user);
 	
-	var _user3 = __webpack_require__(30);
+	var _user3 = __webpack_require__(38);
 	
 	var _user4 = _interopRequireDefault(_user3);
 	
@@ -34181,21 +34272,21 @@
 	};
 
 /***/ },
-/* 29 */
+/* 37 */
 /***/ function(module, exports) {
 
 	module.exports = "<div ng-class=\"$ctrl.styles.user\">\n\t<span>{{$ctrl.user.username}}</span>\n</div>\n";
 
 /***/ },
-/* 30 */
+/* 38 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"user":"_1IZKgvl92BktL4gSOmBmsk"};
 
 /***/ },
-/* 31 */,
-/* 32 */
+/* 39 */,
+/* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34204,11 +34295,11 @@
 	    value: true
 	});
 	
-	var _allPets = __webpack_require__(33);
+	var _allPets = __webpack_require__(41);
 	
 	var _allPets2 = _interopRequireDefault(_allPets);
 	
-	var _allPets3 = __webpack_require__(34);
+	var _allPets3 = __webpack_require__(42);
 	
 	var _allPets4 = _interopRequireDefault(_allPets3);
 	
@@ -34225,21 +34316,21 @@
 	}
 
 /***/ },
-/* 33 */
+/* 41 */
 /***/ function(module, exports) {
 
-	module.exports = "<section ng-class=\"$ctrl.styles.pets\">\n    <p>Random content on profile/all-pets.<p>\n</section>\n";
+	module.exports = "<section ng-class=\"$ctrl.styles.pets\">\n    <div>\n        <p>Profile child content (profile.pets) : A list of the user's pets.</p>\n        <ul>\n            <li ui-sref=\"stats.pet\">Pet One</li>\n            <li ui-sref=\"stats.pet\">Pet Two</li>\n        </ul>\n    </div>\n</section>\n";
 
 /***/ },
-/* 34 */
+/* 42 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"pets":"_3t6C2H26Y_ZvTyv5qRZtlN"};
 
 /***/ },
-/* 35 */,
-/* 36 */
+/* 43 */,
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34248,11 +34339,11 @@
 	    value: true
 	});
 	
-	var _app = __webpack_require__(37);
+	var _app = __webpack_require__(45);
 	
 	var _app2 = _interopRequireDefault(_app);
 	
-	var _app3 = __webpack_require__(38);
+	var _app3 = __webpack_require__(46);
 	
 	var _app4 = _interopRequireDefault(_app3);
 	
@@ -34269,20 +34360,20 @@
 	}
 
 /***/ },
-/* 37 */
+/* 45 */
 /***/ function(module, exports) {
 
 	module.exports = "<main>\n    <ui-view></ui-view>\n</main>\n\n";
 
 /***/ },
-/* 38 */
+/* 46 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 39 */,
-/* 40 */
+/* 47 */,
+/* 48 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34291,11 +34382,99 @@
 	    value: true
 	});
 	
-	var _profile = __webpack_require__(41);
+	var _managePets = __webpack_require__(49);
+	
+	var _managePets2 = _interopRequireDefault(_managePets);
+	
+	var _managePets3 = __webpack_require__(50);
+	
+	var _managePets4 = _interopRequireDefault(_managePets3);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	    template: _managePets2.default,
+	    controller: controller
+	};
+	
+	
+	function controller() {
+	    this.styles = _managePets4.default;
+	}
+
+/***/ },
+/* 49 */
+/***/ function(module, exports) {
+
+	module.exports = "<section ng-class=\"$ctrl.styles.manage\">\n    <div>\n        <p>Profile child content (profile.manage) : Where you add pets.</p>\n        <div>\n            <div>\n                <h3>Add a Pet</h3>\n                <label>Name:</label>\n                <input ng-model=\"$ctrl.name\">\n            </div>\n            <div>\n                <label>Breed:</label>\n                <input ng-model=\"$ctrl.breed\">\n            </div>\n            <div>\n                <label>Weight:</label>\n                <input ng-model=\"$ctrl.weight\">\n            </div>\n            <div>\n                <label>Age:</label>\n                <input ng-model=\"$ctrl.age\">\n            </div>\n            <button>Add</button>\n            <button>Cancel</button>        \n        </div>\n    </div>\n</section>\n";
+
+/***/ },
+/* 50 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"manage":"_1Bk5gCf_Ggc2liTgwUhnpK"};
+
+/***/ },
+/* 51 */,
+/* 52 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _pet = __webpack_require__(53);
+	
+	var _pet2 = _interopRequireDefault(_pet);
+	
+	var _pet3 = __webpack_require__(54);
+	
+	var _pet4 = _interopRequireDefault(_pet3);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	    template: _pet2.default,
+	    controller: controller
+	};
+	
+	
+	function controller() {
+	    this.styles = _pet4.default;
+	}
+
+/***/ },
+/* 53 */
+/***/ function(module, exports) {
+
+	module.exports = "<section ng-class=\"$ctrl.styles.pet\">\n    <div>\n        <p>Stats child content (stats.pet) : Specific info about the selected pet.</p>\n    </div>\n</section>\n";
+
+/***/ },
+/* 54 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"pet":"YxDsQTdeVerIN91T0REbA"};
+
+/***/ },
+/* 55 */,
+/* 56 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _profile = __webpack_require__(57);
 	
 	var _profile2 = _interopRequireDefault(_profile);
 	
-	var _profile3 = __webpack_require__(42);
+	var _profile3 = __webpack_require__(58);
 	
 	var _profile4 = _interopRequireDefault(_profile3);
 	
@@ -34312,21 +34491,65 @@
 	}
 
 /***/ },
-/* 41 */
+/* 57 */
 /***/ function(module, exports) {
 
-	module.exports = "<section ng-class=\"$ctrl.styles.profile\">\n    <header>\n        <h1>This is Header Content.</h1>\n    </header>\n    <p>Random content on profile parent.<p>\n    <section>\n        <ui-view></ui-view>\n    </section>\n</section>\n";
+	module.exports = "<section ng-class=\"$ctrl.styles.profile\">\n    <header>\n        <h1>PawsIO</h1>\n        <nav>\n            <li>Sign Out</li>\n            <li ui-sref=\"profile\">Your Dogs</li>\n            <li ui-sref=\"about\">About</li>\n        </nav>\n    </header>\n    <p>Profile parent content (profile) : Information about the user.<p>\n    <button ui-sref=\"profile.manage\">Add a Pet</button>\n    <section>\n        <ui-view></ui-view>\n    </section>\n</section>\n";
 
 /***/ },
-/* 42 */
+/* 58 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"profile":"_3z0ZR-ff-NLQoPBo8gGSQf"};
 
 /***/ },
-/* 43 */,
-/* 44 */
+/* 59 */,
+/* 60 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _stats = __webpack_require__(61);
+	
+	var _stats2 = _interopRequireDefault(_stats);
+	
+	var _stats3 = __webpack_require__(62);
+	
+	var _stats4 = _interopRequireDefault(_stats3);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	    template: _stats2.default,
+	    controller: controller
+	};
+	
+	
+	function controller() {
+	    this.styles = _stats4.default;
+	}
+
+/***/ },
+/* 61 */
+/***/ function(module, exports) {
+
+	module.exports = "<section ng-class=\"$ctrl.styles.stats\">\n    <header>\n        <h1>PawsIO</h1>\n        <nav>\n            <li>Sign Out</li>\n            <li ui-sref=\"profile\">Your Dogs</li>\n            <li ui-sref=\"about\">About</li>\n        </nav>\n    </header>\n    <p>Stats parent content (stats) : Information about the selected pet.<p>\n    <section>\n        <ui-view></ui-view>\n    </section>\n</section>\n";
+
+/***/ },
+/* 62 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+	module.exports = {"stats":"_3ME9n6VahAkq3ku3Crh5pc"};
+
+/***/ },
+/* 63 */,
+/* 64 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34349,7 +34572,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var context = __webpack_require__(45);
+	var context = __webpack_require__(65);
 	
 	var _module = _angular2.default.module('services', []);
 	
@@ -34361,12 +34584,12 @@
 	exports.default = _module.name;
 
 /***/ },
-/* 45 */
+/* 65 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var map = {
-		"./token-service.js": 46,
-		"./user-service.js": 47
+		"./token-service.js": 66,
+		"./user-service.js": 67
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -34379,11 +34602,11 @@
 	};
 	webpackContext.resolve = webpackContextResolve;
 	module.exports = webpackContext;
-	webpackContext.id = 45;
+	webpackContext.id = 65;
 
 
 /***/ },
-/* 46 */
+/* 66 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -34411,7 +34634,7 @@
 	}
 
 /***/ },
-/* 47 */
+/* 67 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -34455,7 +34678,7 @@
 	}
 
 /***/ },
-/* 48 */
+/* 68 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*!
@@ -42804,7 +43027,7 @@
 	//# sourceMappingURL=angular-ui-router.js.map
 
 /***/ },
-/* 49 */
+/* 69 */
 /***/ function(module, exports) {
 
 	/**
@@ -42905,7 +43128,7 @@
 	})(window.angular);
 
 /***/ },
-/* 50 */
+/* 70 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*!
@@ -43114,7 +43337,7 @@
 	//# sourceMappingURL=stateEvents.js.map
 
 /***/ },
-/* 51 */
+/* 71 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -43133,6 +43356,8 @@
 	        data: {
 	            public: true
 	        },
+	        abstract: true,
+	        default: '.app',
 	        component: 'about'
 	    });
 	
@@ -43185,11 +43410,31 @@
 	        component: 'managePets'
 	    });
 	
-	    $urlRouterProvider.otherwise('/welcome');
+	    $stateProvider.state({
+	        name: 'stats',
+	        url: '/stats',
+	        abstract: true,
+	        default: '.pet',
+	        data: {
+	            public: true
+	        },
+	        component: 'stats'
+	    });
+	
+	    $stateProvider.state({
+	        name: 'stats.pet',
+	        url: '/pets',
+	        data: {
+	            public: true
+	        },
+	        component: 'pet'
+	    });
+	
+	    $urlRouterProvider.otherwise('/about/app');
 	}
 
 /***/ },
-/* 52 */
+/* 72 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -44084,13 +44329,13 @@
 
 
 /***/ },
-/* 53 */
+/* 73 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(54);
+	var content = __webpack_require__(74);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(6)(content, {});
@@ -44110,7 +44355,7 @@
 	}
 
 /***/ },
-/* 54 */
+/* 74 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(5)();
@@ -44124,13 +44369,13 @@
 
 
 /***/ },
-/* 55 */
+/* 75 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(56);
+	var content = __webpack_require__(76);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(6)(content, {});
@@ -44150,7 +44395,7 @@
 	}
 
 /***/ },
-/* 56 */
+/* 76 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(5)();
@@ -44164,7 +44409,7 @@
 
 
 /***/ },
-/* 57 */
+/* 77 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -44206,7 +44451,7 @@
 	}
 
 /***/ },
-/* 58 */
+/* 78 */
 /***/ function(module, exports) {
 
 	'use strict';
