@@ -34072,7 +34072,7 @@
 /* 21 */
 /***/ function(module, exports) {
 
-	module.exports = "<section ng-class=\"$ctrl.styles.about\">\n    <header>\n        <h1>PawsIO</h1>\n        <nav>\n            <li>Sign Out</li>\n            <li ui-sref=\"profile\">Your Dogs</li>\n            <li ui-sref=\"about\">About</li>\n        </nav>\n    </header>\n    <<img src=\"/img/pawsio-logo.JPG\" alt=\"PawsIO Logo\">\n    <ui-view></ui-view>\n</section>\n";
+	module.exports = "<section ng-class=\"$ctrl.styles.about\">\n    <header>\n        <div>\n            <img src=\"/img/pawsio-logo-transparent2.png\" alt=\"PawsIO Logo\">\n        </div>\n        <h1>PawsIO</h1>\n        <nav>\n            <li>Sign Out</li>\n            <li ui-sref=\"profile\">Your Dogs</li>\n            <li ui-sref=\"about\">About</li>\n        </nav>\n    </header>\n    <ui-view></ui-view>\n</section>\n";
 
 /***/ },
 /* 22 */
