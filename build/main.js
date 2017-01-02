@@ -60,33 +60,33 @@
 	
 	var _services2 = _interopRequireDefault(_services);
 	
-	var _angularUiRouter = __webpack_require__(68);
+	var _angularUiRouter = __webpack_require__(69);
 	
 	var _angularUiRouter2 = _interopRequireDefault(_angularUiRouter);
 	
-	var _angularUiRouterDefault = __webpack_require__(69);
+	var _angularUiRouterDefault = __webpack_require__(70);
 	
 	var _angularUiRouterDefault2 = _interopRequireDefault(_angularUiRouterDefault);
 	
-	__webpack_require__(70);
+	__webpack_require__(71);
 	
-	var _routes = __webpack_require__(71);
+	var _routes = __webpack_require__(72);
 	
 	var _routes2 = _interopRequireDefault(_routes);
 	
-	var _ngDialog = __webpack_require__(72);
+	var _ngDialog = __webpack_require__(73);
 	
 	var _ngDialog2 = _interopRequireDefault(_ngDialog);
 	
-	__webpack_require__(73);
+	__webpack_require__(74);
 	
-	__webpack_require__(75);
+	__webpack_require__(76);
 	
-	var _http = __webpack_require__(77);
+	var _http = __webpack_require__(78);
 	
 	var _http2 = _interopRequireDefault(_http);
 	
-	var _auth = __webpack_require__(78);
+	var _auth = __webpack_require__(79);
 	
 	var _auth2 = _interopRequireDefault(_auth);
 	
@@ -34064,15 +34064,23 @@
 	};
 	
 	
-	function controller() {
+	controller.$inject = ['userService'];
+	
+	function controller(userService) {
 	    this.styles = _about4.default;
+	    this.logout = function () {
+	        return userService.logout();
+	    };
+	    this.isAuthenticated = function () {
+	        return userService.isAuthenticated();
+	    };
 	}
 
 /***/ },
 /* 21 */
 /***/ function(module, exports) {
 
-	module.exports = "<section ng-class=\"$ctrl.styles.about\">\n    <header>\n        <div>\n            <img src=\"/img/pawsio-logo-transparent2.png\" alt=\"PawsIO Logo\">\n        </div>\n        <h1>PawsIO</h1>\n        <nav>\n            <li>Sign Out</li>\n            <li ui-sref=\"profile\">Your Dogs</li>\n            <li ui-sref=\"about\">About</li>\n        </nav>\n    </header>\n    <ui-view></ui-view>\n</section>\n";
+	module.exports = "<section ng-class=\"$ctrl.styles.about\">\n    <header>\n        <div>\n            <img src=\"/img/pawsio-logo-transparent2.png\" alt=\"PawsIO Logo\">\n        </div>\n        <h1>PawsIO</h1>\n        <nav>\n            <li ng-if=\"$ctrl.isAuthenticated()\" ui-sref=\"about\" ng-click=\"$ctrl.logout()\">logout</li>\n            <li>Sign Out</li>\n            <li ui-sref=\"profile\">Your Dogs</li>\n            <li ui-sref=\"about\">About</li>\n        </nav>\n    </header>\n    <ui-view></ui-view>\n</section>\n";
 
 /***/ },
 /* 22 */
@@ -34307,11 +34315,16 @@
 	
 	exports.default = {
 	    template: _allPets2.default,
+	    bindings: {
+	        pets: '<'
+	    },
 	    controller: controller
 	};
 	
 	
-	function controller() {
+	controller.$inject = ['petsService', 'petSnapshotService'];
+	
+	function controller(pets, snapshots) {
 	    this.styles = _allPets4.default;
 	}
 
@@ -34319,7 +34332,7 @@
 /* 41 */
 /***/ function(module, exports) {
 
-	module.exports = "<section ng-class=\"$ctrl.styles.pets\">\n    <div>\n        <p>Profile child content (profile.pets) : A list of the user's pets.</p>\n        <ul>\n            <li ui-sref=\"stats.pet\">Pet One</li>\n            <li ui-sref=\"stats.pet\">Pet Two</li>\n        </ul>\n    </div>\n</section>\n";
+	module.exports = "<section ng-class=\"$ctrl.styles.pets\">\n    <div>\n        <p>Profile child content (profile.pets) : A list of the user's pets.</p>\n        <ul>\n            <li ui-sref=\"stats.pet\">Pet One</li>\n            <li ui-sref=\"stats.pet\">Pet Two</li>\n        </ul>\n    </div>\n\n    <div>\n      <ul>\n        <li ng-repeat=\"pet in $ctrl.pets\">{{pet.name}}</li>\n      </ul>\n    </div>\n</section>\n";
 
 /***/ },
 /* 42 */
@@ -34486,15 +34499,23 @@
 	};
 	
 	
-	function controller() {
+	controller.$inject = ['userService'];
+	
+	function controller(userService) {
 	    this.styles = _profile4.default;
+	    this.logout = function () {
+	        return userService.logout();
+	    };
+	    this.isAuthenticated = function () {
+	        return userService.isAuthenticated();
+	    };
 	}
 
 /***/ },
 /* 57 */
 /***/ function(module, exports) {
 
-	module.exports = "<section ng-class=\"$ctrl.styles.profile\">\n    <header>\n        <h1>PawsIO</h1>\n        <nav>\n            <li>Sign Out</li>\n            <li ui-sref=\"profile\">Your Dogs</li>\n            <li ui-sref=\"about\">About</li>\n        </nav>\n    </header>\n    <p>Profile parent content (profile) : Information about the user.<p>\n    <button ui-sref=\"profile.manage\">Add a Pet</button>\n    <section>\n        <ui-view></ui-view>\n    </section>\n</section>\n";
+	module.exports = "<section ng-class=\"$ctrl.styles.profile\">\n    <header>\n        <h1>PawsIO</h1>\n        <nav>\n            <li ng-if=\"$ctrl.isAuthenticated()\" ui-sref=\"about\" ng-click=\"$ctrl.logout()\">logout</li>\n            <li ui-sref=\"profile\">Your Dogs</li>\n            <li ui-sref=\"about\">About</li>\n        </nav>\n    </header>\n    <p>Profile parent content (profile) : Information about the user.<p>\n    <button ui-sref=\"profile.manage\">Add a Pet</button>\n    <section>\n        <ui-view></ui-view>\n    </section>\n</section>\n";
 
 /***/ },
 /* 58 */
@@ -34588,8 +34609,9 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var map = {
-		"./token-service.js": 66,
-		"./user-service.js": 67
+		"./pets-service.js": 66,
+		"./token-service.js": 67,
+		"./user-service.js": 68
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -34607,6 +34629,53 @@
 
 /***/ },
 /* 66 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.default = petsService;
+	petsService.$inject = ['$http', 'apiUrl'];
+	
+	function petsService($http, apiUrl) {
+	    return {
+	        getAll: function getAll() {
+	            return $http.get(apiUrl + '/pets/all').then(function (res) {
+	                return res.data;
+	            });
+	        },
+	        getById: function getById(pet_id) {
+	            return $http.get(apiUrl + '/pets/' + pet_id).then(function (res) {
+	                return res.data;
+	            });
+	        },
+	        getByQuery: function getByQuery(query) {
+	            return $http.get(apiUrl + '/pets/?' + query).then(function (res) {
+	                return res.data;
+	            });
+	        },
+	        addPet: function addPet(pet) {
+	            return $http.post(apiUrl + '/pets', pet).then(function (res) {
+	                return res.data;
+	            });
+	        },
+	        updatePet: function updatePet(pet_id) {
+	            return $http.put(apiUrl + '/pets', pet).then(function (res) {
+	                return res.data;
+	            });
+	        },
+	        removePet: function removePet(pet_id) {
+	            return $http.delete(apiUrl + '/pets/' + pet_id).then(function (res) {
+	                res.data;
+	            });
+	        }
+	    };
+	}
+
+/***/ },
+/* 67 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -34634,7 +34703,7 @@
 	}
 
 /***/ },
-/* 67 */
+/* 68 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -34649,14 +34718,14 @@
 	
 	    var current = token.get();
 	    if (current) {
-	        $http.get(apiUrl + '/auth/verify').catch(function () {
+	        $http.get(apiUrl + '/users/verify').catch(function () {
 	            return token.remove();
 	        });
 	    }
 	
 	    function credential(endpoint) {
 	        return function (credentials) {
-	            return $http.post(apiUrl + '/auth/' + endpoint, credentials).then(function (result) {
+	            return $http.post(apiUrl + '/users/' + endpoint, credentials).then(function (result) {
 	                token.set(result.data.token);
 	            }).catch(function (err) {
 	                throw err.data;
@@ -34678,7 +34747,7 @@
 	}
 
 /***/ },
-/* 68 */
+/* 69 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*!
@@ -43027,7 +43096,7 @@
 	//# sourceMappingURL=angular-ui-router.js.map
 
 /***/ },
-/* 69 */
+/* 70 */
 /***/ function(module, exports) {
 
 	/**
@@ -43128,7 +43197,7 @@
 	})(window.angular);
 
 /***/ },
-/* 70 */
+/* 71 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*!
@@ -43337,7 +43406,7 @@
 	//# sourceMappingURL=stateEvents.js.map
 
 /***/ },
-/* 71 */
+/* 72 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -43373,9 +43442,6 @@
 	    $stateProvider.state({
 	        name: 'about.developers',
 	        url: '/developers',
-	        data: {
-	            public: true
-	        },
 	        component: 'aboutDevelopers'
 	    });
 	
@@ -43384,23 +43450,17 @@
 	        url: '/profile',
 	        abstract: true,
 	        default: '.pets',
-	        data: {
-	            public: true
+	        resolve: {
+	            pets: ['petsService', function (pets) {
+	                return pets.get();
+	            }]
 	        },
-	        // resolve: {
-	        //     pets: ['yetToBeMadeService', pets => {
-	        //         return pets.get();
-	        //     }]
-	        // },
 	        component: 'profile'
 	    });
 	
 	    $stateProvider.state({
 	        name: 'profile.pets',
 	        url: '/pets',
-	        data: {
-	            public: true
-	        },
 	        component: 'allPets'
 	    });
 	
@@ -43415,18 +43475,12 @@
 	        url: '/stats',
 	        abstract: true,
 	        default: '.pet',
-	        data: {
-	            public: true
-	        },
 	        component: 'stats'
 	    });
 	
 	    $stateProvider.state({
 	        name: 'stats.pet',
 	        url: '/pets',
-	        data: {
-	            public: true
-	        },
 	        component: 'pet'
 	    });
 	
@@ -43434,7 +43488,7 @@
 	}
 
 /***/ },
-/* 72 */
+/* 73 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -44329,13 +44383,13 @@
 
 
 /***/ },
-/* 73 */
+/* 74 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(74);
+	var content = __webpack_require__(75);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(6)(content, {});
@@ -44355,7 +44409,7 @@
 	}
 
 /***/ },
-/* 74 */
+/* 75 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(5)();
@@ -44369,13 +44423,13 @@
 
 
 /***/ },
-/* 75 */
+/* 76 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(76);
+	var content = __webpack_require__(77);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(6)(content, {});
@@ -44395,7 +44449,7 @@
 	}
 
 /***/ },
-/* 76 */
+/* 77 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(5)();
@@ -44409,7 +44463,7 @@
 
 
 /***/ },
-/* 77 */
+/* 78 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -44451,7 +44505,7 @@
 	}
 
 /***/ },
-/* 78 */
+/* 79 */
 /***/ function(module, exports) {
 
 	'use strict';

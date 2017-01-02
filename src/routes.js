@@ -10,7 +10,7 @@ export default function routes($stateProvider, $urlRouterProvider) {
         },
         abstract: true,
         default: '.app',
-        component: 'about' 
+        component: 'about'
     });
 
     $stateProvider.state({
@@ -19,16 +19,13 @@ export default function routes($stateProvider, $urlRouterProvider) {
         data: {
             public: true
         },
-        component: 'aboutApp' 
+        component: 'aboutApp'
     });
 
     $stateProvider.state({
         name: 'about.developers',
         url: '/developers',
-        // data: {
-        //     public: true
-        // },
-        component: 'aboutDevelopers' 
+        component: 'aboutDevelopers'
     });
 
     $stateProvider.state({
@@ -36,23 +33,17 @@ export default function routes($stateProvider, $urlRouterProvider) {
         url: '/profile',
         abstract: true,
         default: '.pets',
-        // data: {
-        //     public: true
-        // },
-        // resolve: {
-        //     pets: ['yetToBeMadeService', pets => {
-        //         return pets.get();
-        //     }]
-        // },
+        resolve: {
+            pets: ['petsService', pets => {
+                return pets.getAll();
+            }]
+        },
         component: 'profile'
     });
 
     $stateProvider.state({
         name: 'profile.pets',
         url: '/pets',
-        // data: {
-        //     public: true
-        // },
         component: 'allPets'
     });
 
@@ -64,24 +55,23 @@ export default function routes($stateProvider, $urlRouterProvider) {
 
     $stateProvider.state({
         name: 'stats',
-        url: '/stats',
+        url: '/stats/:id',
         abstract: true,
         default: '.pet',
-        // data: {
-        //     public: true
-        // },
+        resolve: {
+            pet: ['$transition$', 'petsService', (t, pets) => {
+                return pets.getById(t.params().id);
+            }]
+        },
         component: 'stats'
     });
 
     $stateProvider.state({
         name: 'stats.pet',
         url: '/pets',
-        // data: {
-        //     public: true
-        // },
         component: 'pet'
     });
 
     $urlRouterProvider.otherwise('/about/app');
-    
+
 }
