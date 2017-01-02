@@ -1,9 +1,11 @@
 <section ng-class="$ctrl.styles.pets">
     <div>
         <p>Profile child content (profile.pets) : A list of the user's pets.</p>
-        <ul>
-            <li ui-sref="stats.pet">Pet One</li>
-            <li ui-sref="stats.pet">Pet Two</li>
-        </ul>
+    </div>
+
+    <div>
+      <ul>
+        <li ui-sref="stats({ id: pet._id })" ng-repeat="pet in $ctrl.pets.pets">{{pet.name}}</li>
+      </ul>
     </div>
 </section>

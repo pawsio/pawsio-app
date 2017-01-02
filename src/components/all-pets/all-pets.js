@@ -3,9 +3,16 @@ import styles from './all-pets.scss';
 
 export default {
     template,
+    bindings: {
+        pets: '<'
+    },
     controller
 };
 
-function controller() {
+controller.$inject = ['petsService'];
+
+function controller(petsService){
     this.styles = styles;
+
+
 }

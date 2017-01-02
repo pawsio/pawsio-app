@@ -3,7 +3,10 @@ import styles from './pet.scss';
 
 export default {
     template,
-    controller
+    controller,
+    bindings: {
+        pet: '<'
+    }
 };
 
 controller.$inject = ['petSnapshotService'];
