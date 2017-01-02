@@ -5,13 +5,13 @@ export default function userService(token, $http, apiUrl) {
     const current = token.get();
     if (current) {
         $http
-            .get(`${apiUrl}/auth/verify`)
+            .get(`${apiUrl}/users/verify`)
             .catch(() => token.remove());
     }
     
     function credential(endpoint) {
         return (credentials) => {
-            return $http.post(`${apiUrl}/auth/${endpoint}`, credentials)
+            return $http.post(`${apiUrl}/users/${endpoint}`, credentials)
             .then(result => {
                 token.set(result.data.token);
             })

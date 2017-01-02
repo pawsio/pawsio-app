@@ -5,6 +5,7 @@
         </div>
         <h1>PawsIO</h1>
         <nav>
+            <li ng-if="$ctrl.isAuthenticated()" ui-sref="about" ng-click="$ctrl.logout()">logout</li>
             <li>Sign Out</li>
             <li ui-sref="profile">Your Dogs</li>
             <li ui-sref="about">About</li>
