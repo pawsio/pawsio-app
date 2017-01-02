@@ -25,9 +25,9 @@ export default function routes($stateProvider, $urlRouterProvider) {
     $stateProvider.state({
         name: 'about.developers',
         url: '/developers',
-        data: {
-            public: true
-        },
+        // data: {
+        //     public: true
+        // },
         component: 'aboutDevelopers' 
     });
 
@@ -36,9 +36,9 @@ export default function routes($stateProvider, $urlRouterProvider) {
         url: '/profile',
         abstract: true,
         default: '.pets',
-        data: {
-            public: true
-        },
+        // data: {
+        //     public: true
+        // },
         // resolve: {
         //     pets: ['yetToBeMadeService', pets => {
         //         return pets.get();
@@ -50,9 +50,9 @@ export default function routes($stateProvider, $urlRouterProvider) {
     $stateProvider.state({
         name: 'profile.pets',
         url: '/pets',
-        data: {
-            public: true
-        },
+        // data: {
+        //     public: true
+        // },
         component: 'allPets'
     });
 
@@ -67,18 +67,18 @@ export default function routes($stateProvider, $urlRouterProvider) {
         url: '/stats',
         abstract: true,
         default: '.pet',
-        data: {
-            public: true
-        },
+        // data: {
+        //     public: true
+        // },
         component: 'stats'
     });
 
     $stateProvider.state({
         name: 'stats.pet',
         url: '/pets',
-        data: {
-            public: true
-        },
+        // data: {
+        //     public: true
+        // },
         component: 'pet'
     });
 
