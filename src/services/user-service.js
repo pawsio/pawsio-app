@@ -5,7 +5,7 @@ export default function userService(token, $http, apiUrl) {
     const current = token.get();
     if (current) {
         $http
-            .get(`${apiUrl}/users/verify`)
+            .post(`${apiUrl}/users/validate`)
             .catch(() => token.remove());
     }
     
