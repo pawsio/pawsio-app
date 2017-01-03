@@ -29,7 +29,7 @@
             <div>
               <label>Breed:</label>
               <select ng-model="$ctrl.selectedBreed" ng-options="breed.breed for breed in $ctrl.breeds" ng-change="$ctrl.renderExercise()">${{$ctrl.breed}}</select>
-              <p ng-show="$ctrl.selectedBreed">this dog typically needs about {{$ctrl.selectedBreed.exerciseNeed}} minutes of exercise</p>
+              <p ng-show="$ctrl.selectedBreed">{{$ctrl.selectedBreed.breed}} typically needs about {{$ctrl.selectedBreed.exerciseNeed}} minutes of exercise per day.</p>
             </div>
             <button>Submit</button>
             <button ng-click="add=!add">Cancel</button>

@@ -1,9 +1,11 @@
+@import 'colors';
+
 :local(.about) {
     margin: 10% 2% 2%;
 
     header {
         display: inline-block;
-        background-color: #f4d06f;
+        background-color: $header;
         margin: 0;
         position: fixed;
         width: 100%;
@@ -13,10 +15,11 @@
 
         div {
             margin: 1% 2%;
-            width: 100px;
+            width: 50px;
             float: left;
             padding: 0;
             img {
+                background-color: $logo;
                 display: block;
                 border-radius: 100%;
                 max-width: 100%;

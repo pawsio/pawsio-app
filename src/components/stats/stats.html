@@ -1,8 +1,11 @@
 <section ng-class="$ctrl.styles.stats">
     <header>
+        <div>
+            <img src="/img/pawsio-logo-transparent2.png" alt="PawsIO Logo">
+        </div>
         <h1>PawsIO</h1>
         <nav>
-            <li>Sign Out</li>
+            <li ng-if="$ctrl.isAuthenticated()" ui-sref="about" ng-click="$ctrl.logout()">Sign Out</li>
             <li ui-sref="profile">Your Dogs</li>
             <li ui-sref="about">About</li>
         </nav>

@@ -23,5 +23,5 @@ export default function kineticsService() {
         totalDistance(distArray) {
             return distArray.reduce((acc, curr) => { return acc + curr; });
         }
-    }
+    };
 };

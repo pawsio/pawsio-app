@@ -1,4 +1,6 @@
+@import 'colors';
+
 :local(.pet) {
     margin: 2%;
-    border: 1px solid black;
+    border: 1px solid $black;
 }
