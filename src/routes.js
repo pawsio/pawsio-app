@@ -48,12 +48,6 @@ export default function routes($stateProvider, $urlRouterProvider) {
     });
 
     $stateProvider.state({
-        name: 'profile.manage',
-        url: '/manage',
-        component: 'managePets'
-    });
-
-    $stateProvider.state({
         name: 'stats',
         url: '/stats/:id',
         abstract: true,
