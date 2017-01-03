@@ -9,14 +9,8 @@ export default {
     }
 };
 
-controller.$inject = ['petSnapshotService'];
-
-function controller(petSnapshotService) {
+function controller() {
     this.styles = styles;
-    const remy = '5868a8f7cd0c850011324469';
-    petSnapshotService.get(remy).then(data => {
-        this.petData = data;
-    });
 
 }
 

@@ -15,13 +15,13 @@ function controller(petsService){
     this.styles = styles;
 
     this.breeds = [
-      { breed: 'working dogs', exerciseNeed: 120 },
-      { breed: 'terriers', exerciseNeed: 110 },
-      { breed: 'retrievers', exerciseNeed: 90 },
-      { breed: 'hounds', exerciseNeed: 70 },
-      { breed: 'spaniels/miniatures', exerciseNeed: 50 },
-      { breed: 'bulldogs', exerciseNeed: 30 },
-      { breed: 'lapdogs', exerciseNeed: 20 }
+      { breed: 'Working dogs', exerciseNeed: 120 },
+      { breed: 'Terriers', exerciseNeed: 110 },
+      { breed: 'Retrievers', exerciseNeed: 90 },
+      { breed: 'Hounds', exerciseNeed: 70 },
+      { breed: 'Spaniels/Miniatures', exerciseNeed: 50 },
+      { breed: 'Bulldogs', exerciseNeed: 30 },
+      { breed: 'Lapdogs', exerciseNeed: 20 }
     ];
     this.selectedBreed = null;
 
