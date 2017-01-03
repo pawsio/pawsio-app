@@ -5,7 +5,7 @@
 
     <div>
       <ul>
-        <li ui-sref="stats({ id: pet._id })" ng-repeat="pet in $ctrl.pets.pets">{{pet.name}}</li>
+        <li ui-sref="stats({ id: pet._id })" ng-repeat="pet in $ctrl.pets">{{pet.name}}</li>
       </ul>
     </div>
     <button ng-click="add=!add" ng-hide="add">Add</button>
@@ -28,10 +28,27 @@
             </div>
             <div>
               <label>Breed:</label>
-              <select ng-model="$ctrl.selectedBreed" ng-options="breed.breed for breed in $ctrl.breeds" ng-change="$ctrl.renderExercise()">${{$ctrl.breed}}</select>
-              <p ng-show="$ctrl.selectedBreed">{{$ctrl.selectedBreed.breed}} typically needs about {{$ctrl.selectedBreed.exerciseNeed}} minutes of exercise per day.</p>
+              <select
+               ng-model="$ctrl.selectedBreed"
+               ng-options="breed.breed for breed in $ctrl.breeds">
+               ${{$ctrl.breed}}
+             </select>
+              <div ng-hide="$ctrl.selectedBreed.value === 'Other'" ng-if="$ctrl.selectedBreed">
+                <p>{{$ctrl.selectedBreed.breed}} typically needs about
+                 {{$ctrl.selectedBreed.exerciseNeed}} minutes of exercise per day.</p>
+              </div>
+              <div ng-show="$ctrl.selectedBreed.value === 'Other'">
+                <div>
+                    <label>Custom Breed:</label>
+                    <input ng-model="$ctrl.customBreed">
+                </div>
+                <div>
+                    <label>Exercise Requirements:</label>
+                    <input ng-model="$ctrl.customExercise">
+                </div>
+               </div>
             </div>
-            <button>Submit</button>
+            <button ng-click="$ctrl.addPet()">Submit</button>
             <button ng-click="add=!add">Cancel</button>
         </div>
     </div>

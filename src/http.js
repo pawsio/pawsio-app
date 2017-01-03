@@ -13,12 +13,11 @@ function interceptor($window, tokenService, $state) {
             config.headers = config.headers || {};
 
             const token = tokenService.get();
-            
+
             if (token) {
                 config.headers.Authorization = `Bearer ${token}`;
             }
-            console.log('headers: ', config.headers);	
-                                
+
             return config;
         },
         responseError(response) {

@@ -35,7 +35,10 @@ export default function routes($stateProvider, $urlRouterProvider) {
         default: '.pets',
         resolve: {
             pets: ['petsService', pets => {
-                return pets.getAll();
+                return pets.getAll()
+                  .then(pets => {
+                      return pets.pets;
+                  });
             }]
         },
         component: 'profile'
@@ -62,7 +65,7 @@ export default function routes($stateProvider, $urlRouterProvider) {
 
     $stateProvider.state({
         name: 'stats.pet',
-        url: '/pets',
+        url: '/pet-info',
         component: 'pet'
     });
 

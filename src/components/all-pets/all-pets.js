@@ -9,32 +9,39 @@ export default {
     controller
 };
 
-controller.$inject = ['petsService'];
+controller.$inject = [ 'petsService', '$state' ];
 
-function controller(petsService){
+function controller(petsService, $state){
     this.styles = styles;
 
     this.breeds = [
-      { breed: 'Working dogs', exerciseNeed: 120 },
+      { breed: 'Working Dogs', exerciseNeed: 120 },
       { breed: 'Terriers', exerciseNeed: 110 },
       { breed: 'Retrievers', exerciseNeed: 90 },
       { breed: 'Hounds', exerciseNeed: 70 },
       { breed: 'Spaniels/Miniatures', exerciseNeed: 50 },
       { breed: 'Bulldogs', exerciseNeed: 30 },
-      { breed: 'Lapdogs', exerciseNeed: 20 }
+      { breed: 'Lapdogs', exerciseNeed: 20 },
+      { breed: 'Other', value: 'Other' }
     ];
-    this.selectedBreed = null;
-
-    this.renderExercise = function(){
-        console.log('selectedBreed: ', this.selectedBreed);
-    };
+    this.selectedBreed = '';
 
     this.addPet = function(){
-        petsService.addPet({
+
+        let breedName = '';
+        let exercise = null;
+        let petToAdd = {
             name: this.name,
             age: this.age,
             weight: this.weight,
-            breed: this.selectedBreed
-        });
+            breed: this.customBreed || this.selectedBreed.breed,
+            exerciseNeed: this.customExercise || this.selectedBreed.exerciseNeed
+        };
+
+        petsService.addPet(petToAdd)
+          .then(savedPet => {
+              this.pets.push(savedPet);
+          });
     };
+
 }
