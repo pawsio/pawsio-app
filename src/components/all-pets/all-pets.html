@@ -5,7 +5,7 @@
 
     <div>
       <ul>
-        <li ui-sref="stats({ id: pet._id })" ng-repeat="pet in $ctrl.pets.pets">{{pet.name}}</li>
+        <li ui-sref="stats({ id: pet._id })" ng-repeat="pet in $ctrl.pets">{{pet.name}}</li>
       </ul>
     </div>
     <button ng-click="add=!add" ng-hide="add">Add</button>
@@ -30,8 +30,7 @@
               <label>Breed:</label>
               <select
                ng-model="$ctrl.selectedBreed"
-               ng-options="breed.breed for breed in $ctrl.breeds"
-               ng-change="$ctrl.renderExercise()">
+               ng-options="breed.breed for breed in $ctrl.breeds">
                ${{$ctrl.breed}}
              </select>
               <div ng-hide="$ctrl.selectedBreed.value === 'Other'" ng-if="$ctrl.selectedBreed">

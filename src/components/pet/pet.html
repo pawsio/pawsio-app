@@ -3,7 +3,7 @@
         <p>Stats child content (stats.pet) : Specific info about the selected pet.</p>
         <p>Pet name: {{$ctrl.pet.name}}</p>
         <p>Pet animal: {{$ctrl.pet.animal}}</p>
-    </div>
-    <div>
         <p>Pet data: {{$ctrl.pet.data}}</p>
+    </div>
+    <button ng-click="$ctrl.removePet(pet)">delete</button>
 </section>

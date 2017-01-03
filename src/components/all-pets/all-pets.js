@@ -9,9 +9,9 @@ export default {
     controller
 };
 
-controller.$inject = ['petsService'];
+controller.$inject = [ 'petsService', '$state' ];
 
-function controller(petsService){
+function controller(petsService, $state){
     this.styles = styles;
 
     this.breeds = [
@@ -26,10 +26,6 @@ function controller(petsService){
     ];
     this.selectedBreed = '';
 
-    this.renderExercise = function(){
-        console.log('selectedBreed: ', this.selectedBreed);
-    };
-
     this.addPet = function(){
 
         let breedName = '';
@@ -42,8 +38,10 @@ function controller(petsService){
             exerciseNeed: this.customExercise || this.selectedBreed.exerciseNeed
         };
 
-        console.log('petToAdd: ', petToAdd);
-
-        // petsService.addPet();
+        petsService.addPet(petToAdd)
+          .then(savedPet => {
+              this.pets.push(savedPet);
+          });
     };
+
 }
