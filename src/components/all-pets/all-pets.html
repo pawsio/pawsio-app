@@ -8,4 +8,31 @@
         <li ui-sref="stats({ id: pet._id })" ng-repeat="pet in $ctrl.pets.pets">{{pet.name}}</li>
       </ul>
     </div>
+    <button ng-click="add=!add" ng-hide="add">Add</button>
+    <div ng-show="add">
+        <p>Profile child content (profile.manage) : Where you add pets.</p>
+        <div>
+            <div>
+                <h3>Add a Pet</h3>
+                <label>Name:</label>
+                <input ng-model="$ctrl.name">
+            </div>
+
+            <div>
+                <label>Weight:</label>
+                <input ng-model="$ctrl.weight">
+            </div>
+            <div>
+                <label>Age:</label>
+                <input ng-model="$ctrl.age">
+            </div>
+            <div>
+              <label>Breed:</label>
+              <select ng-model="$ctrl.selectedBreed" ng-options="breed.breed for breed in $ctrl.breeds" ng-change="$ctrl.renderExercise()">${{$ctrl.breed}}</select>
+              <p ng-show="$ctrl.selectedBreed">this dog typically needs about {{$ctrl.selectedBreed.exerciseNeed}} minutes of exercise</p>
+            </div>
+            <button>Submit</button>
+            <button ng-click="add=!add">Cancel</button>
+        </div>
+    </div>
 </section>
