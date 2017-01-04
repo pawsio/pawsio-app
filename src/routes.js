@@ -86,6 +86,17 @@ export default function routes($stateProvider, $urlRouterProvider) {
         component: 'pet'
     });
 
+    $stateProvider.state({
+        name: 'snapshot',
+        url: '/snapshot/:id',
+        resolve: {
+            snapshot: ['$transition$', 'petSnapshotService', (t, snapshot) => {
+                return snapshot.get(t.params().id);
+            }]
+        },
+        component: 'snapshot'
+    });
+
     $urlRouterProvider.otherwise('/about/app');
 
 }
