@@ -5,9 +5,16 @@
         </div>
         <h1>PawsIO</h1>
         <nav>
-            <li ng-if="$ctrl.isAuthenticated()" ui-sref="about" ng-click="$ctrl.logout()">Sign Out</li>
-            <li ui-sref="profile">Your Dogs</li>
+            <li 
+            ng-if="$ctrl.isAuthenticated()"
+            ui-sref="stats({ id: pet._id })"
+            ng-repeat="pet in $ctrl.pets">
+                {{pet.name}}
+            </li>
+            <li ui-sref="profile" ng-if="$ctrl.isAuthenticated()">Profile</li>
             <li ui-sref="about">About</li>
+            <li ng-if="$ctrl.isAuthenticated()" ui-sref="about" ng-click="$ctrl.logout()">Logout</li>
+            <li ng-if="!$ctrl.isAuthenticated()" ui-sref="profile">Signin</li>
         </nav>
     </header>
     <ui-view></ui-view>

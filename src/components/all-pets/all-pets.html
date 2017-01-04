@@ -34,7 +34,7 @@
                ${{$ctrl.breed}}
              </select>
               <div ng-hide="$ctrl.selectedBreed.value === 'Other'" ng-if="$ctrl.selectedBreed">
-                <p>{{$ctrl.selectedBreed.breed}} typically needs about
+                <p>{{$ctrl.selectedBreed.breed}}s typically needs about
                  {{$ctrl.selectedBreed.exerciseNeed}} minutes of exercise per day.</p>
               </div>
               <div ng-show="$ctrl.selectedBreed.value === 'Other'">
