@@ -3,7 +3,10 @@ import styles from './stats.scss';
 
 export default {
     template,
-    controller
+    controller,
+    bindings: {
+        pets: '<'
+    }
 };
 
 controller.$inject = ['userService'];

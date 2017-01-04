@@ -4,7 +4,11 @@ export default function petsService($http, apiUrl){
     return{
         getAll(){
             return $http.get(`${apiUrl}/pets/all`)
-        .then(res => res.data);
+        .then(res => res.data)
+        .catch(() => {
+            let pets = [];
+            return pets;
+        });
         },
 
         getById(pet_id){

@@ -8,6 +8,14 @@ export default function routes($stateProvider, $urlRouterProvider) {
         data: {
             public: true
         },
+        resolve: {
+            pets: ['petsService', pets => {
+                return pets.getAll()
+                  .then(pets => {
+                      return pets.pets;
+                  });
+            }]
+        },
         abstract: true,
         default: '.app',
         component: 'about'
@@ -16,9 +24,9 @@ export default function routes($stateProvider, $urlRouterProvider) {
     $stateProvider.state({
         name: 'about.app',
         url: '/app',
-        data: {
-            public: true
-        },
+        // data: {
+        //     public: true
+        // },
         component: 'aboutApp'
     });
 
@@ -58,6 +66,12 @@ export default function routes($stateProvider, $urlRouterProvider) {
         resolve: {
             pet: ['$transition$', 'petSnapshotService', (t, pets) => {
                 return pets.get(t.params().id);
+            }],
+            pets: ['petsService', pets => {
+                return pets.getAll()
+                  .then(pets => {
+                      return pets.pets;
+                  });
             }]
         },
         component: 'stats'

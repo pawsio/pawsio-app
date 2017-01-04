@@ -5,9 +5,17 @@
         </div>
         <h1>PawsIO</h1>
         <nav>
+            <li 
+            ng-if="$ctrl.isAuthenticated()"
+            ui-sref="stats({ id: pet._id })"
+            ng-repeat="pet in $ctrl.pets">
+                {{pet.name}}
+            </li>
+            <li ui-sref="profile">profile</li>
+            <li ui-sref="about">about</li>
             <li ng-if="$ctrl.isAuthenticated()" ui-sref="about" ng-click="$ctrl.logout()">logout</li>
-            <li ui-sref="profile">Your Dogs</li>
-            <li ui-sref="about">About</li>
+            
+            
         </nav>
     </header>
     <p>Profile parent content (profile) : Information about the user.<p>
