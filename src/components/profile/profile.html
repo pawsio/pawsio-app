@@ -3,7 +3,7 @@
         <div>
             <img src="/img/pawsio-logo-transparent2.png" alt="PawsIO Logo">
         </div>
-        <h1>PawsIO</h1>
+        <h1>p a w s i o</h1>
         <nav>
             <li 
             ng-if="$ctrl.isAuthenticated()"
@@ -11,15 +11,14 @@
             ng-repeat="pet in $ctrl.pets">
                 {{pet.name}}
             </li>
-            <li ui-sref="profile">Profile</li>
-            <li ui-sref="about">About</li>
-            <li ng-if="$ctrl.isAuthenticated()" ui-sref="about" ng-click="$ctrl.logout()">Logout</li>
-            
-            
+            <li ui-sref="profile">ACCOUNT</li>
+            <li ui-sref="about">ABOUT</li>
+            <li ng-if="$ctrl.isAuthenticated()" ui-sref="about" ng-click="$ctrl.logout()">LOGOUT</li>
         </nav>
     </header>
-    <p>Profile parent content (profile) : Information about the user.<p>
+    <!--<p>Profile parent content (profile) : Information about the user.<p>-->
     <section>
+        <img src="/img/joyous-husky.jpg" width=100% height=25%/>
         <ui-view></ui-view>
     </section>
 </section>
