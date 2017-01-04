@@ -9,10 +9,25 @@ export default {
     }
 };
 
-controller.$inject = ['petSnapshotService', '$state'];
+controller.$inject = ['kineticsService', 'petSnapshotService', '$state'];
 
-function controller(petSnapshotService, $state) {
+function controller(kineticsService, petSnapshotService, $state) {
     this.styles = styles;
+    this.velArr = [];
+    this.distArr = [];
+
+    this.$onInit = function () {
+        kineticsService.getVelocity(this.snapshot.dataPayload)
+        .then(velArr => {
+            this.velArr = velArr;
+            return kineticsService.getDistance(this.velArr);
+        })
+        .then(distArr => {
+            this.distArr = distArr;
+            this.distance = kineticsService.totalDistance(this.distArr);
+        })
+        .catch(err => console.err);     
+    };
 
     this.removeSnapshot = function(snapshot) {
         petSnapshotService.remove(this.snapshot._id)
