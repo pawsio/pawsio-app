@@ -72,6 +72,9 @@ export default function routes($stateProvider, $urlRouterProvider) {
                   .then(pets => {
                       return pets.pets;
                   });
+            }],
+            petData: ['$transition$', 'petSnapshotService', (t, snapshots) => {
+                return snapshots.getAll(t.params().id);
             }]
         },
         component: 'stats'

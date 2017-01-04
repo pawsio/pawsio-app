@@ -7,5 +7,8 @@
         <p>{{$ctrl.pet.name}}'s breed: {{$ctrl.pet.breed}}</p>
         <p>{{$ctrl.pet.name}}'s exercise requirements: {{$ctrl.pet.exerciseNeed}} minutes per day</p>
     </div>
+    <div>
+        <li ng-repeat="data in $ctrl.petData.data">{{data.date}}</li>
+    </div>
     <button ng-click="$ctrl.removePet(pet)">delete</button>
 </section>
