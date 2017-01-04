@@ -11,10 +11,10 @@
             ng-repeat="pet in $ctrl.pets">
                 {{pet.name}}
             </li>
-            <li ui-sref="profile" ng-if="$ctrl.isAuthenticated()">profile</li>
-            <li ui-sref="about">about</li>
-            <li ng-if="$ctrl.isAuthenticated()" ui-sref="about" ng-click="$ctrl.logout()">logout</li>
-            <li ng-if="!$ctrl.isAuthenticated()" ui-sref="profile">signin</li>
+            <li ui-sref="profile" ng-if="$ctrl.isAuthenticated()">Profile</li>
+            <li ui-sref="about">About</li>
+            <li ng-if="$ctrl.isAuthenticated()" ui-sref="about" ng-click="$ctrl.logout()">Logout</li>
+            <li ng-if="!$ctrl.isAuthenticated()" ui-sref="profile">Signin</li>
         </nav>
     </header>
     <ui-view></ui-view>
