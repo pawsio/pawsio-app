@@ -4,6 +4,12 @@ petSnapshotService.$inject = ['$http', 'apiUrl'];
 // $http gets injected
 export default function petSnapshotService($http, apiUrl) {
     return {
+
+        get(animalId) {
+            return $http.get(`${apiUrl}/pet-snapshots/${animalId}/all`)
+                .then(res => res.data);
+        },
+
         get(id) {
             return $http.get(`${apiUrl}/pet-snapshots/${id}`)
                 .then(res => res.data);
