@@ -6,7 +6,7 @@ export default {
     controller,
     bindings: {
         pet: '<',
-        // pets: '<'
+        petData: '<'
     }
 };
 
