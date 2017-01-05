@@ -21,11 +21,12 @@
                         id: data._id,
                         petId : $ctrl.pet._id
                     })">
-                    <td>{{data.prettyDate}}</td>
-                    <td>{{data.time}}</td>
+                      <td class="highlight">{{data.prettyDate}}</td>
+                      <td class="highlight">{{data.time}}</td>
+                    <td><button id="delete-snap-td" ng-click="$ctrl.removeSnap(data, $event)">X</button></td>
                 </tr>
             </tbody>
         </table>
     </div>
-    <button class="delete-btn" ng-click="$ctrl.removePet(pet)">Delete</button>
+    <button class="delete-btn" ng-click="$ctrl.removePet()">Delete</button>
 </section>

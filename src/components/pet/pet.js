@@ -10,9 +10,9 @@ export default {
     }
 };
 
-controller.$inject = [ 'petsService', '$state' ];
+controller.$inject = [ 'petsService', '$state', 'petSnapshotService' ];
 
-function controller(petsService, $state) {
+function controller(petsService, $state, snapService) {
     this.styles = styles;
 
     this.$onInit = function () {
@@ -26,7 +26,7 @@ function controller(petsService, $state) {
             converted[0] = parts[1];
             converted[1] = parts[2];
             converted[2] = parts[0];
-            let convDate = converted.join('-');    
+            let convDate = converted.join('-');
             dataArr[i].prettyDate = convDate;
             dataArr[i].time = timeChunk;
         };
@@ -34,12 +34,27 @@ function controller(petsService, $state) {
     };
 
     this.removePet = function(pet){
-        // event.stopPropagation();
-        petsService.removePet(this.pet._id)
-        .then(() => {
-            $state.go('profile');
-        });
+        var result = confirm("Are you sure you want to delete?");
+        if (result) {
+    //Logic to delete the item
+            petsService.removePet(this.pet._id)
+              .then(() => {
+                  $state.go('profile');
+              });
+        }
 
+    };
+
+    this.removeSnap = function(snapshot, ev){
+        ev.stopPropagation();
+        var result = confirm("Are you sure you want to delete?");
+        if (result) {
+            console.log('this.snapshot: ', snapshot);
+            snapService.remove(snapshot._id)
+              .then(() => {
+                  this.dataPoints.splice(this.dataPoints.indexOf(snapshot), 1);
+              });
+        };
     };
 
 }
