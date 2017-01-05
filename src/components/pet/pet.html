@@ -18,7 +18,8 @@
             <tbody>
                 <tr class="dates" ng-repeat="data in $ctrl.dataPoints"
                     ui-sref="snapshot({
-                        id: data._id
+                        id: data._id,
+                        petId : $ctrl.pet._id
                     })">
                     <td>{{data.prettyDate}}</td>
                     <td>{{data.time}}</td>
