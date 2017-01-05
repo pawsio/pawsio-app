@@ -1,8 +1,36 @@
 @import 'colors';
 
 :local(.pet) {
+    text-align: center;
     margin: 2%;
     border: 1px solid $black;
+
+    table {
+        background-color: $grey;
+        width: 50%;
+        margin: 2% auto 0;
+        border-collapse: collapse;
+    }
+
+    thead {
+        font-weight: bold;
+    }
+    
+    tbody {
+        cursor: pointer;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+    }
+    
+    .hikes {
+        margin-top: 2%;
+    }
+
+    ul {
+        list-style: none;
+    }
 }
 
 .delete-btn {

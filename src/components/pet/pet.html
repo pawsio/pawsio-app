@@ -7,9 +7,34 @@
         <p>Breed: {{$ctrl.pet.breed}}</p>
         <p>Exercise target: {{$ctrl.pet.exerciseNeed}} minutes per day</p>
     </div>
-
-    <div>
-        <li ui-sref="snapshot({ id: data._id })"ng-repeat="data in $ctrl.petData.data">{{data.date}}</li>
+    <!--<div class="hikes">
+        <p>Hikes You've taken with {{$ctrl.pet.name}}:</p>
+        <ul>
+            <li ui-sref="snapshot({ id: data._id })
+            "ng-repeat="data in $ctrl.dataPoints">
+                Date of Hike:{{data.prettyDate}} Time of Hike:{{data.time}}
+            </li>
+        </ul>
+    </div>-->
+    <div class="hikes">
+        <p>Hikes You've taken with {{$ctrl.pet.name}}:</p>
+        <table>
+            <thead>
+                <tr>
+                    <td>Date</td>
+                    <td>Time</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="data in $ctrl.dataPoints"
+                    ui-sref="snapshot({
+                        id: data._id
+                    })">
+                    <td>{{data.prettyDate}}</td>
+                    <td>{{data.time}}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
     <button ng-click="$ctrl.removePet(pet)">delete</button>
 </section>
