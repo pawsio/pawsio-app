@@ -21,6 +21,7 @@ function controller(petsService, $state){
         this.customBreed = '';
         this.selectedBreed = '';
         this.customExercise = '';
+        this.distanceGoal = '';
     };
 
     this.reset();
@@ -45,6 +46,7 @@ function controller(petsService, $state){
             name: this.name,
             age: this.age,
             weight: this.weight,
+            distanceGoal: this.distanceGoal,
             breed: this.customBreed || this.selectedBreed.breed,
             exerciseNeed: this.customExercise || this.selectedBreed.exerciseNeed
         };
