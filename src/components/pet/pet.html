@@ -9,7 +9,7 @@
     </div>
 
     <div>
-        <li ui-sref="snapshot({ id: data._id })"ng-repeat="data in $ctrl.petData.data">{{data.date}}</li>
+        <li ui-sref="snapshot({ id: data._id })"ng-repeat="data in $ctrl.dataPoints">{{data.prettyDate}}</li>
     </div>
     <button ng-click="$ctrl.removePet(pet)">delete</button>
 </section>
