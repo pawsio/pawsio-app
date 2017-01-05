@@ -2,5 +2,14 @@
 
 :local(.pets) {
     margin: 2%;
-    border: 1px solid $black;
+
+    h2 {
+        font-size: 1.5em;
+        color: $item;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
 }
