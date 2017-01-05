@@ -19,13 +19,15 @@ function controller(kineticsService, petSnapshotService, $state) {
     this.$onInit = function () {
         kineticsService.getVelocity(this.snapshot.dataPayload)
         .then(velArr => {
-            this.hikeLength = velArr[(velArr.length) - 1].timeStamp;
+            let rawHikeLength = velArr[(velArr.length) - 1].timeStamp;
+            this.hikeLengthMin = Math.round(rawHikeLength)/60;
             this.velArr = velArr;
             return kineticsService.getDistance(this.velArr);
         })
         .then(distArr => {
             this.distArr = distArr;
-            this.distance = kineticsService.totalDistance(this.distArr);
+            let rawDistance = kineticsService.totalDistance(this.distArr);
+            this.distance = Math.round((rawDistance * 0.000621371) * 100) / 100;
         })
         .catch(err => console.err);     
     };
