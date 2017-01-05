@@ -15,7 +15,6 @@
         z-index: 1000;
 
         div {
-            margin: 2% 4%;
             width: 50px;
             float: left;
             padding: 0;
@@ -30,21 +29,54 @@
         h1 {
             width: 30%;
             float: left;
-            font-family: $h1;
-            font: 3em;
+            // font-family: $h1;
+            // font: 3em;
         }
 
         nav {
             box-sizing: border-box;
             text-align: right; 
-            width: 48%;
+            width: 80%;
             float: right;
+            position: absolute;
             list-style: none;
-            margin-top: 1.75%;
-            padding-right: 2%;
+            margin-bottom: 1%;
+            // position: relative;
+            // z-index: 5;
             li {
+                float: right;
                 margin: 0 4% 0 0;
-                display: inline-block;        
+                position: relative; 
+                display: block;    
+            }
+            li:hover {
+                color: $green;
+                text-decoration: underline;
+            }
+            // nested ul for nav dropdown
+            ul {
+                background: $header;
+                list-style: none;
+                padding: 0;
+                position: absolute;
+                // left: -9999px;
+            }
+            ul li {
+                padding-top: 1px;
+                float: none;
+                white-space: nowrap;
+            }
+            li:hover ul {
+                left: 0;
+            }
+            li:hover li {
+                background: $background;
+            }
+            li:hover ul li {
+                text-decoration: none;
+            }
+            li:hover ul li:hover {
+                background: $background;
             }
         }
     }

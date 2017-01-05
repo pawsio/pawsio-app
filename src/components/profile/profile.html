@@ -5,14 +5,14 @@
         </div>
         <h1>p a w s i o</h1>
         <nav>
-            <li 
+            <li ui-sref="profile">ACCOUNT</li>
+                <ul>
+                    <li 
             ng-if="$ctrl.isAuthenticated()"
             ui-sref="stats({ id: pet._id })"
-            ng-repeat="pet in $ctrl.pets">
-                {{pet.name}}
-            </li>
-            <li ui-sref="profile">ACCOUNT</li>
-            <li ui-sref="about">ABOUT</li>
+            ng-repeat="pet in $ctrl.pets">{{pet.name}}</li>
+                </ul>
+                <li ui-sref="about">ABOUT</li>
             <li ng-if="$ctrl.isAuthenticated()" ui-sref="about" ng-click="$ctrl.logout()">LOGOUT</li>
         </nav>
     </header>
