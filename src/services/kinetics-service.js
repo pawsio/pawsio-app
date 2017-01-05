@@ -29,7 +29,6 @@ export default function kineticsService() {
             });
         },
         totalDistance(distArray) {
-            console.log('distArr: ', distArray);
             return distArray.reduce((acc, curr) => {
                 return acc + curr.distance; 
             }, 0);

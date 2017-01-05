@@ -21,7 +21,6 @@ function controller(petsService, $state) {
             let longDate = dataArr[i].date;
             let dateChunk = longDate.slice(0, 10);
             let timeChunk = longDate.slice(11, 16);
-            console.log('timeChunk: ', timeChunk);
             let parts = dateChunk.split('-');
             let converted = [];
             converted[0] = parts[1];
@@ -32,7 +31,6 @@ function controller(petsService, $state) {
             dataArr[i].time = timeChunk;
         };
         this.dataPoints = dataArr;
-        console.log('dataArr: ', dataArr);
     };
 
     this.removePet = function(pet){
