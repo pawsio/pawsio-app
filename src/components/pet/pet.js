@@ -15,41 +15,24 @@ controller.$inject = [ 'petsService', '$state' ];
 function controller(petsService, $state) {
     this.styles = styles;
 
-    // this.$onInit = function () {
-    //     let dates = [];
-    //     let convertedDates = [];
-    //     let dataArr = this.petData.data;
-    //     for (var i = 0; i < dataArr.length; i++) {
-    //         dates.push(dataArr[i].date);
-    //     };
-    //     this.convertedDates = dates.map(function(date) {
-    //         let chunk = date.slice(0, 10);
-    //         let parts = chunk.split('-');
-    //         let converted = [];
-    //         converted[0] = parts[1];
-    //         converted[1] = parts[2];
-    //         converted[2] = parts[0];
-    //         let convDate = converted.join('-');
-    //         return convDate;
-    //     });
-
     this.$onInit = function () {
-        let dates = [];
-        let convertedDates = [];
         let dataArr = this.petData.data;
         for (var i = 0; i < dataArr.length; i++) {
             let longDate = dataArr[i].date;
-            let chunk = longDate.slice(0, 10);
-            let parts = chunk.split('-');
+            let dateChunk = longDate.slice(0, 10);
+            let timeChunk = longDate.slice(11, 16);
+            console.log('timeChunk: ', timeChunk);
+            let parts = dateChunk.split('-');
             let converted = [];
             converted[0] = parts[1];
             converted[1] = parts[2];
             converted[2] = parts[0];
-            let convDate = converted.join('-');
+            let convDate = converted.join('-');    
             dataArr[i].prettyDate = convDate;
+            dataArr[i].time = timeChunk;
         };
         this.dataPoints = dataArr;
-        console.log('dates :', this.dataPoints);
+        console.log('dataArr: ', dataArr);
     };
 
     this.removePet = function(pet){

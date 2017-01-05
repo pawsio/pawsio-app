@@ -19,6 +19,7 @@ function controller(kineticsService, petSnapshotService, $state) {
     this.$onInit = function () {
         kineticsService.getVelocity(this.snapshot.dataPayload)
         .then(velArr => {
+            this.hikeLength = velArr[(velArr.length) - 1].timeStamp;
             this.velArr = velArr;
             return kineticsService.getDistance(this.velArr);
         })
