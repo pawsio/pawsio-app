@@ -3,17 +3,20 @@
         <div>
             <img src="/img/pawsio-logo-transparent2.png" alt="PawsIO Logo">
         </div>
-        <h1>p a w s i o</h1>
+        <h1>P a w s I O</h1>
         <nav>
-            <li 
-            ng-if="$ctrl.isAuthenticated()"
-            ui-sref="stats({ id: pet._id })"
-            ng-repeat="pet in $ctrl.pets">
-                {{pet.name}}
-            </li>
-            <li ui-sref="profile">ACCOUNT</li>
-            <li ui-sref="about">ABOUT</li>
-            <li ng-if="$ctrl.isAuthenticated()" ui-sref="about" ng-click="$ctrl.logout()">LOGOUT</li>
+            <ul>
+                <li ui-sref="profile">ACCOUNT
+                    <ul>
+                        <li 
+                ng-if="$ctrl.isAuthenticated()"
+                ui-sref="stats({ id: pet._id })"
+                ng-repeat="pet in $ctrl.pets">{{ pet.name }}</li>
+                    </ul>
+                </li>
+                <li ui-sref="about">ABOUT</li>
+                <li ng-if="$ctrl.isAuthenticated()" ui-sref="about" ng-click="$ctrl.logout()">LOGOUT</li>
+            </ul>
         </nav>
     </header>
     <!--<p>Profile parent content (profile) : Information about the user.<p>-->
