@@ -7,11 +7,12 @@ export default {
     controller,
     bindings: {
         snapshot: '<',
-        pet: '<'
+        pet: '<',
+        pets: '<'
     }
 };
 
-controller.$inject = ['kineticsService', 'petSnapshotService', 'temperatureService', '$state'];
+controller.$inject = ['kineticsService', 'petSnapshotService', 'temperatureService', 'userService', '$state'];
 
 function renderChart(canvasId, type, label, x, y, yLabel) {
     return new Chart(canvasId, {
@@ -34,17 +35,17 @@ function renderChart(canvasId, type, label, x, y, yLabel) {
     });
 };
 
-function controller(kineticsService, petSnapshotService, temperatureService, $state) {
-
+function controller(kineticsService, petSnapshotService, temperatureService, userService, $state) {
     this.styles = styles;
+    this.logout = () => userService.logout();
+    this.isAuthenticated = () => userService.isAuthenticated();
     this.velArr = [];
     this.distArr = [];
     this.threshold = [];
     this.time = [];
 
     this.$onInit = function () {
-        console.log('temp: ', this.snapshot.dataPayload);
-
+        console.log('distanceGoal: ', this.pet.distanceGoal);
         let temp = temperatureService.getAvgTemp(this.snapshot.dataPayload);
         this.averageTemp = Math.round(temp);
 
@@ -77,9 +78,12 @@ function controller(kineticsService, petSnapshotService, temperatureService, $st
             .catch(err => console.err);
         
         this.runChart = function () {
-            let barLabels = ['Exercise Needed', 'This Hike'];
-            let barData = [this.pet.exerciseNeed, this.hikeLengthMin];
-            renderChart('myChart', 'bar', '# of Minutes', barLabels, barData);
+            let barLabelsOne = ['Exercise Needed', 'This Hike'];
+            let barLabelsTwo = ['Distance Goal', 'This Hike'];
+            let barDataOne = [this.pet.exerciseNeed, this.hikeLengthMin];
+            let barDataTwo = [this.pet.distanceGoal, this.distance];
+            renderChart('lengthChart', 'bar', '# of Minutes', barLabelsOne, barDataOne);
+            renderChart('distanceChart', 'bar', '# of Miles', barLabelsTwo, barDataTwo);
             renderChart('mySound', 'line', 'Sound Intensity', this.time, this.threshold);
         };
     };
