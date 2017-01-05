@@ -48,13 +48,20 @@
 
     .pet-info {
         margin: 10% 2% 2%;
+        text-align: center;
     }
 
-    .hike-length-chart {
+    .hike-length-chart,
+    .hike-distance-chart {
+        p {
+            color: $black;
+            margin: 5% 0;
+        }
+        display: inline-block;
         background-color: $white;
         border-radius: 15px;
         margin: 2% auto;
-        width: 50%;
+        width: 40%;
     }
 
 }
