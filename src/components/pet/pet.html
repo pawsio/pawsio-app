@@ -1,32 +1,22 @@
 <section ng-class="$ctrl.styles.pet">
-    <div>
-        <p>Stats child content (stats.pet) : Specific info about the selected pet.</p>
-        <h1>{{$ctrl.pet.name}}</h1>
-        <p>Weight: {{$ctrl.pet.weight}} pounds</p>
-        <p>Age: {{$ctrl.pet.age}} years old</p>
-        <p>Breed: {{$ctrl.pet.breed}}</p>
-        <p>Exercise target: {{$ctrl.pet.exerciseNeed}} minutes per day</p>
+    <div id="pet-overview">
+        <h1 id="pet-header">{{$ctrl.pet.name}}</h1>
+        <p class="overview-stats">Weight: {{$ctrl.pet.weight}} pounds</p>
+        <p class="overview-stats">Age: {{$ctrl.pet.age}} years old</p>
+        <p class="overview-stats">Breed: {{$ctrl.pet.breed}}</p>
+        <p class="overview-stats">Exercise target: {{$ctrl.pet.exerciseNeed}} minutes per day</p>
+        <p>Adventures with {{$ctrl.pet.name}}:</p>
     </div>
-    <!--<div class="hikes">
-        <p>Hikes You've taken with {{$ctrl.pet.name}}:</p>
-        <ul>
-            <li ui-sref="snapshot({ id: data._id })
-            "ng-repeat="data in $ctrl.dataPoints">
-                Date of Hike:{{data.prettyDate}} Time of Hike:{{data.time}}
-            </li>
-        </ul>
-    </div>-->
     <div class="hikes">
-        <p>Hikes You've taken with {{$ctrl.pet.name}}:</p>
         <table>
             <thead>
                 <tr>
-                    <td>Date</td>
-                    <td>Time</td>
+                    <td class="table-header">Date</td>
+                    <td class="table-header">Time</td>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="data in $ctrl.dataPoints"
+                <tr class="dates" ng-repeat="data in $ctrl.dataPoints"
                     ui-sref="snapshot({
                         id: data._id
                     })">
@@ -36,5 +26,5 @@
             </tbody>
         </table>
     </div>
-    <button ng-click="$ctrl.removePet(pet)">delete</button>
+    <button class="delete-btn" ng-click="$ctrl.removePet(pet)">Delete</button>
 </section>

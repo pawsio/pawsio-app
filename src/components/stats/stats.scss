@@ -2,7 +2,7 @@
 
 :local(.stats) {
     margin:  10% 2% 2%;
-    border: 1px solid $black;
+    // border: 1px solid $black;
 
     header {
         display: inline-block;
@@ -34,7 +34,7 @@
 
         nav {
             box-sizing: border-box;
-            text-align: right; 
+            text-align: right;
             width: 50%;
             float: right;
             list-style: none;
@@ -42,7 +42,7 @@
             padding-right: 4%;
             li {
                 margin: 0 4% 0 0;
-                display: inline-block;           
+                display: inline-block;
             }
         }
     }
