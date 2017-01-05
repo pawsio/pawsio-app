@@ -1,13 +1,13 @@
 @import 'colors';
+@import 'fonts';
 
 :local(.about) {
-    margin: 0% 0% 0%;
+    margin: 0;
 
     header {
         display: inline-block;
-        background-color: $header;
         margin: 0;
-        position: fixed;
+        position: absolute;
         width: 100%;
         top: 0;
         left: 0;
@@ -15,33 +15,72 @@
 
         div {
             width: 50px;
+            margin: 2% 4%;
             float: left;
             padding: 0;
             img {
                 display: block;
+                border: 3px solid $green;
+                padding: 8px;
                 border-radius: 100%;
-                max-width: 100%;
+                max-width: 75%;
             }
         }
-
+        
         h1 {
-            width: 30%;
             float: left;
+            margin: 2.5% 0 0 2%;
+            font-family: $h1;
+            font-size: 2.3em;
         }
 
-        nav {
+        nav ul {
             box-sizing: border-box;
-            text-align: right;
-            width: 50%;
+            text-align: left; 
+            font-family: $h1;
+            font-size: 1em;
+            width: 100%;
             float: right;
+            position: absolute;
             list-style: none;
-            margin-top: 1.75%;
-            padding-right: 4%;
+            margin: 4% 0;
             li {
+                float: right;
                 margin: 0 4% 0 0;
-                display: inline-block;
+                position: relative; 
+                display: block;    
+            }
+            li:hover {
+                color: $green;
+                text-decoration: underline;
+            }
+            // nested ul for nav dropdown
+            li ul {
+                background: $header;
+                background: rgba(189,161,70,0);
+                list-style: none;
+                padding: 0;
+                position: absolute;
+                display: none;
+                li {
+                    padding-top: 1px;
+                    float: none;
+                    white-space: nowrap;
+                    color: $black;
+                }
+            }
+            li:hover ul {
+                display: block;
+            }
+            li:hover li {
+                background: $dropdown;
+            }
+            li:hover ul li {
+                text-decoration: none;
+            }
+            li:hover ul li:hover {
+                background: $header;
             }
         }
     }
-
 }

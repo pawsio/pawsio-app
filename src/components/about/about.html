@@ -1,20 +1,22 @@
 <section ng-class="$ctrl.styles.about">
     <header>
         <div>
-            <img src="/img/pawsio-logo-transparent2.png" alt="PawsIO Logo">
+            <img src="/img/logo-alt.png" alt="PawsIO Logo">
         </div>
-        <h1>PawsIO</h1>
+        <h1>p a w s i o</h1>
         <nav>
-            <li
-            ng-if="$ctrl.isAuthenticated()"
-            ui-sref="stats({ id: pet._id })"
-            ng-repeat="pet in $ctrl.pets">
-                {{pet.name}}
-            </li>
-            <li ui-sref="profile" ng-if="$ctrl.isAuthenticated()">Profile</li>
-            <li ui-sref="about">About</li>
-            <li ng-if="$ctrl.isAuthenticated()" ui-sref="about" ng-click="$ctrl.logout()">Logout</li>
-            <li ng-if="!$ctrl.isAuthenticated()" ui-sref="profile">Signin</li>
+            <ul>
+                <li ui-sref="profile">ACCOUNT
+                    <ul>
+                        <li 
+                ng-if="$ctrl.isAuthenticated()"
+                ui-sref="stats({ id: pet._id })"
+                ng-repeat="pet in $ctrl.pets">{{ pet.name }}</li>
+                    </ul>
+                </li>
+                <li ui-sref="about">ABOUT</li>
+                <li ng-if="$ctrl.isAuthenticated()" ui-sref="about" ng-click="$ctrl.logout()">LOGOUT</li>
+            </ul>
         </nav>
     </header>
     <ui-view></ui-view>
