@@ -5,7 +5,7 @@
         </div>
         <h1>PawsIO</h1>
         <nav>
-            <li 
+            <li
                 ng-if="$ctrl.isAuthenticated()"
                 ui-sref="stats({ id: pet._id })"
                 ng-repeat="pet in $ctrl.pets">
@@ -16,7 +16,6 @@
             <li ng-if="$ctrl.isAuthenticated()" ui-sref="about" ng-click="$ctrl.logout()">Logout</li>
         </nav>
     </header>
-    <p>Stats parent content (stats) : Information about the selected pet.<p>
     <section>
         <ui-view></ui-view>
     </section>

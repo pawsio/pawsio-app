@@ -1,12 +1,12 @@
 @import 'colors';
 
+$table-color: #ACDEFF; //light blue
+
 :local(.pet) {
     text-align: center;
-    margin: 2%;
-    border: 1px solid $black;
 
     table {
-        background-color: $grey;
+        // background-color: $grey;
         width: 50%;
         margin: 2% auto 0;
         border-collapse: collapse;
@@ -15,15 +15,15 @@
     thead {
         font-weight: bold;
     }
-    
+
     tbody {
         cursor: pointer;
     }
 
     table, th, td {
-        border: 1px solid black;
+        // border: 1px solid black;
     }
-    
+
     .hikes {
         margin-top: 2%;
     }
@@ -33,7 +33,47 @@
     }
 }
 
+hr {
+  border: 1px solid black;
+}
+
+.dates {
+  font-family: Arial, sans-serif;
+  border-radius: 25px;
+  padding: 20px;
+  width: 600px;
+  height: 35px;
+}
+
+.dates:hover {
+  background-color: #607F94;
+
+}
+
+.dates:nth-child(even) {
+  color: $table-color;
+}
+
 .delete-btn {
 
   background-color: #c91c1c;
+}
+
+#pet-overview {
+  font-family: Arial, sans-serif;
+}
+
+#pet-header {
+  font-size: 20px;
+  color: $table-color;
+}
+
+.table-header {
+  color: $table-color;
+  border-bottom: 2px solid black;
+  font-size: 20px;
+}
+
+.overview-stats {
+  padding-bottom: 20px;
 }
