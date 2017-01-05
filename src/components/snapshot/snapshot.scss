@@ -1,6 +1,54 @@
 @import 'colors';
+@import 'fonts';
 
 :local(.snapshot) {
+
+    header {
+        display: inline-block;
+        background-color: $header;
+        margin: 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+
+        div {
+            margin: 1% 2%;
+            width: 50px;
+            float: left;
+            padding: 0;
+            img {
+                background-color: $logo;
+                display: block;
+                border-radius: 100%;
+                max-width: 100%;
+            }
+        }
+
+        h1 {
+            width: 30%;
+            float: left;
+        }
+
+        nav {
+            box-sizing: border-box;
+            text-align: right;
+            width: 50%;
+            float: right;
+            list-style: none;
+            margin-top: 1.75%;
+            padding-right: 4%;
+            li {
+                margin: 0 4% 0 0;
+                display: inline-block;
+            }
+        }
+    }
+
+    .pet-info {
+        margin: 10% 2% 2%;
+    }
 
     .hike-length-chart {
         background-color: $white;

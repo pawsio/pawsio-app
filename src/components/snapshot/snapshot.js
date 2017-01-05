@@ -7,15 +7,18 @@ export default {
     controller,
     bindings: {
         snapshot: '<',
-        pet: '<'
+        pet: '<',
+        pets: '<'
     }
 };
 
-controller.$inject = ['kineticsService', 'petSnapshotService', 'temperatureService', '$state'];
+controller.$inject = ['kineticsService', 'petSnapshotService', 'temperatureService', 'userService', '$state'];
 
-function controller(kineticsService, petSnapshotService, temperatureService, $state) {
+function controller(kineticsService, petSnapshotService, temperatureService, userService, $state) {
 
     this.styles = styles;
+    this.logout = () => userService.logout();
+    this.isAuthenticated = () => userService.isAuthenticated();
     this.velArr = [];
     this.distArr = [];
 
