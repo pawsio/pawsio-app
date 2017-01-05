@@ -2,8 +2,19 @@
 @import 'fonts';
 
 body {
-    font-family: $body;
-    color: $black;
+    font-family: 'Andale Mono', Arial, sans-serif;
+    background-color: $background;
+    color: $white;
     margin: 0;
     padding: 0;
+}
+
+nav li:hover{
+  cursor:pointer;
+}
+
+body, div, section, hr, p, details {
+  margin: 0;
+  border: 0;
+  padding: 0;
 }

@@ -7,6 +7,7 @@
         <p>Breed: {{$ctrl.pet.breed}}</p>
         <p>Exercise target: {{$ctrl.pet.exerciseNeed}} minutes per day</p>
     </div>
+
     <div>
         <li ui-sref="snapshot({ id: data._id })"ng-repeat="data in $ctrl.petData.data">{{data.date}}</li>
     </div>

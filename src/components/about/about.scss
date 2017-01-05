@@ -1,7 +1,7 @@
 @import 'colors';
 
 :local(.about) {
-    margin: 10% 2% 2%;
+    margin: 0% 0% 0%;
 
     header {
         display: inline-block;
@@ -19,7 +19,6 @@
             float: left;
             padding: 0;
             img {
-                background-color: $logo;
                 display: block;
                 border-radius: 100%;
                 max-width: 100%;
@@ -33,7 +32,7 @@
 
         nav {
             box-sizing: border-box;
-            text-align: right; 
+            text-align: right;
             width: 50%;
             float: right;
             list-style: none;
@@ -41,10 +40,9 @@
             padding-right: 4%;
             li {
                 margin: 0 4% 0 0;
-                display: inline-block;           
+                display: inline-block;
             }
         }
     }
 
 }
-
