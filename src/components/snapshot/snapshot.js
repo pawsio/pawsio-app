@@ -20,7 +20,13 @@ function controller(kineticsService, petSnapshotService, $state) {
         kineticsService.getVelocity(this.snapshot.dataPayload)
         .then(velArr => {
             let rawHikeLength = velArr[(velArr.length) - 1].timeStamp;
-            this.hikeLengthMin = Math.round(rawHikeLength/60);
+            if ((rawHikeLength/60) < .5) {
+                this.hikeLengthMin = Math.ceil(rawHikeLength/60);
+            } else {
+                this.hikeLengthMin = Math.round(rawHikeLength/60);
+
+            }
+            this.hikeLengthMin = Math.ceil(rawHikeLength/60);
             this.velArr = velArr;
             return kineticsService.getDistance(this.velArr);
         })
