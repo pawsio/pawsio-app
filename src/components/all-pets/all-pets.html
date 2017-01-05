@@ -1,14 +1,18 @@
 <section ng-class="$ctrl.styles.pets">
     <div>
-        <p>Profile child content (profile.pets) : A list of the user's pets.</p>
+        <!--<p>Profile child content (profile.pets) : A list of the user's pets.</p>-->
     </div>
+
+    <h2>YOUR PETS</h2>
 
     <div>
       <ul>
         <li ui-sref="stats({ id: pet._id })" ng-repeat="pet in $ctrl.pets">{{pet.name}}</li>
       </ul>
     </div>
+
     <button ng-click="add=!add" ng-hide="add">Add</button>
+    
     <div ng-show="add">
         <p>Profile child content (profile.manage) : Where you add pets.</p>
         <div>

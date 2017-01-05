@@ -1,8 +1,8 @@
 @import 'colors';
+@import 'fonts';
 
 :local(.profile) {
-    margin:  10% 2% 2%;
-    border: 1px solid $black;
+    margin: 10%, 5%;
 
     header {
         display: inline-block;
@@ -15,34 +15,36 @@
         z-index: 1000;
 
         div {
-            margin: 1% 2%;
+            margin: 2% 4%;
             width: 50px;
             float: left;
             padding: 0;
             img {
-                background-color: $logo;
                 display: block;
+                background-color: $logo;
                 border-radius: 100%;
                 max-width: 100%;
             }
         }
-
+        
         h1 {
             width: 30%;
             float: left;
+            font-family: $h1;
+            font: 3em;
         }
 
         nav {
             box-sizing: border-box;
             text-align: right; 
-            width: 50%;
+            width: 48%;
             float: right;
             list-style: none;
             margin-top: 1.75%;
-            padding-right: 4%;
+            padding-right: 2%;
             li {
                 margin: 0 4% 0 0;
-                display: inline-block;           
+                display: inline-block;        
             }
         }
     }
