@@ -1,7 +1,10 @@
-<section>
+<section ng-class="$ctrl.styles.snapshot">
     <div>
         <p>Distance: {{$ctrl.distance}} miles</p>
         <p>Hike Length: {{$ctrl.hikeLengthMin}} minutes</p>
+        <p>Average Temp: {{$ctrl.averageTemp}} degrees</p>
     </div>
-    <canvas id="myChart" width="400" height="400"></canvas>
+    <div class="hike-length-chart">
+        <canvas id="myChart" width="400" height="400"></canvas>
+    <div>
 </section>

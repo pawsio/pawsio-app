@@ -7,15 +7,6 @@
         <p>Breed: {{$ctrl.pet.breed}}</p>
         <p>Exercise target: {{$ctrl.pet.exerciseNeed}} minutes per day</p>
     </div>
-    <!--<div class="hikes">
-        <p>Hikes You've taken with {{$ctrl.pet.name}}:</p>
-        <ul>
-            <li ui-sref="snapshot({ id: data._id })
-            "ng-repeat="data in $ctrl.dataPoints">
-                Date of Hike:{{data.prettyDate}} Time of Hike:{{data.time}}
-            </li>
-        </ul>
-    </div>-->
     <div class="hikes">
         <p>Hikes You've taken with {{$ctrl.pet.name}}:</p>
         <table>
@@ -28,7 +19,8 @@
             <tbody>
                 <tr ng-repeat="data in $ctrl.dataPoints"
                     ui-sref="snapshot({
-                        id: data._id
+                        id: data._id,
+                        petId : $ctrl.pet._id
                     })">
                     <td>{{data.prettyDate}}</td>
                     <td>{{data.time}}</td>

@@ -88,10 +88,13 @@ export default function routes($stateProvider, $urlRouterProvider) {
 
     $stateProvider.state({
         name: 'snapshot',
-        url: '/snapshot/:id',
+        url: '/snapshot/:id/:petId/',
         resolve: {
             snapshot: ['$transition$', 'petSnapshotService', (t, snapshot) => {
                 return snapshot.get(t.params().id);
+            }],
+            pet: ['$transition$', 'petsService', (t, pets) => {
+                return pets.getById(t.params().petId);
             }]
         },
         component: 'snapshot'

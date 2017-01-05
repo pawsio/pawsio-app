@@ -1,0 +1,12 @@
+@import 'colors';
+
+:local(.snapshot) {
+
+    .hike-length-chart {
+        background-color: $white;
+        border-radius: 15px;
+        margin: 2% auto;
+        width: 50%;
+    }
+
+}
