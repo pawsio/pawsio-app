@@ -26,6 +26,7 @@ app.config(routes);
 
 const dev = 'https://pawsio.herokuapp.com/api';
 
+// app.value('apiUrl', process.env.API_URL || '/api'); 
 app.value('apiUrl', dev);
 app.config(http);
 app.run(auth);
