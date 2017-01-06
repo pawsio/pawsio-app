@@ -54,12 +54,13 @@ button:hover{
   flex-direction: row;
   text-align: justify;
   font-size: .8em;
-  margin: 35% 0;
+  margin: 38% 0;
 }
 
 .landing {
   padding: 3%;
   width: 30%;
+  text-align: justify;
   h1 {
     font-family: $tag;
     color: $green;

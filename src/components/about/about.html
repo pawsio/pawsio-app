@@ -1,13 +1,15 @@
 <section ng-class="$ctrl.styles.about">
     <header>
         <div>
-            <img src="/img/logo-alt.png" alt="PawsIO Logo">
-            <h1>P a w s I O</h1><br>
+            <h1>P a w s I O</h1>
             <h2>Re-imagining pet fitness.</h2>
+            <!--<img src="/img/logo-alt.png" alt="PawsIO Logo">-->
         </div>
         <nav>
             <ul>
-                <li ui-sref="profile">ACCOUNT
+                <li ng-if="$ctrl.isAuthenticated()" ui-sref="about" ng-click="$ctrl.logout()">LOGOUT</li>
+                <li ng-if="!$ctrl.isAuthenticated()" ui-sref="profile">SIGNIN</li>
+                <li ui-sref="profile">PROFILE
                     <ul>
                         <li 
                 ng-if="$ctrl.isAuthenticated()"
@@ -16,7 +18,6 @@
                     </ul>
                 </li>
                 <li ui-sref="about">ABOUT</li>
-                <li ng-if="$ctrl.isAuthenticated()" ui-sref="about" ng-click="$ctrl.logout()">LOGOUT</li>
             </ul>
         </nav>
     </header>

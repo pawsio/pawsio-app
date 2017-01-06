@@ -1,4 +1,25 @@
 <section ng-class="$ctrl.styles.developers">
+    <!--<header>
+        <div>
+            <img src="/img/logo-alt.png" alt="PawsIO Logo">
+            <h1>P a w s I O</h1><br>
+            <h2>Re-imagining pet fitness.</h2>
+        </div>
+        <nav>
+            <ul>
+                <li ui-sref="profile">ACCOUNT
+                    <ul>
+                        <li 
+                ng-if="$ctrl.isAuthenticated()"
+                ui-sref="stats({ id: pet._id })"
+                ng-repeat="pet in $ctrl.pets">{{ pet.name }}</li>
+                    </ul>
+                </li>
+                <li ui-sref="about">ABOUT</li>
+                <li ng-if="$ctrl.isAuthenticated()" ui-sref="about" ng-click="$ctrl.logout()">LOGOUT</li>
+            </ul>
+        </nav>
+    </header>-->
     <div>
         <h2>Meet the Developers</h2>
         <div class="profile michelle">
@@ -24,7 +45,7 @@
         <div class="profile michelle">
             <img src="/img/nathan-profile.JPG" alt="Nathan Profile Picture">
             <h3>Caitlin Araldi</h3>
-            <p>Fam etsy flannel skateboard. Cronut literally snackwave gochujang man braid. Raw denim heirloom plaid pok pok, food truck fanny pack sustainable mustache shoreditch skateboard deep v banh mi. Listicle kickstarter prism williamsburg, freegan tilde letterpress. Etsy intelligentsia poutine you probably haven't heard of them, hot chicken kinfolk affogato brunch vexillologist unicorn gluten-free edison bulb. Artisan vegan trust fund small batch, vape health goth unicorn fixie succulents lomo crucifix williamsburg. Williamsburg keffiyeh salvia hella mlkshk green juice, mustache viral tumblr vaporware activated charcoal health goth iPhone.</p>
+            <p>Bilingual web developer with experience flying a single-engine plane solo and an M.Ed. in educational psychology. Passionate about architecting flexible code that impacts users with an engaging design story.</p>
         </div>
     </div>
     <footer ui-sref="about">About the App</footer>

@@ -14,31 +14,29 @@
         background-color: $span;
         div {
             width: 100%;
-            margin: 1%;
             padding: 0;
             float: left;
-            img {
-                display: inline-block;
-                border: 2px solid $green;
-                background-color: $background;
-                padding: 8px;
-                border-radius: 100%;
-                max-width: 3%;
-                margin: 1% 0 0 0;
-            }
             h1 {
-                margin: 0;
+                margin: 2% 2% 1% 4%;
                 display: inline-block;
                 font-family: $body;
                 color: $background;
-                font-size: 2em;
+                font-size: 2.3em;
             }
             h2 {
+                display: inline-block;
                 font-family: $tag;
-                font-size: 1em;
-                margin: 0 0 0 6%;
+                font-size: 1.4em;
                 color: $green;
             }
+            // img {
+            //     display: inline-block;
+            //     border: 2px solid $green;
+            //     background-color: $background;
+            //     padding: 8px;
+            //     border-radius: 100%;
+            //     max-width: 2%;
+            // }
         }
         nav ul {
             box-sizing: border-box;
@@ -52,35 +50,35 @@
             margin: 0;
             li {
                 float: right;
-                margin: 0 4% 0 0;
+                margin: 4% 4% 0 0;
                 position: relative; 
                 display: block;  
                 color: $background;  
             }
             li:hover {
                 color: $green;
-                text-decoration: underline;
             }
             // nested ul for nav dropdown
             li ul {
-                background: $header;
-                background: rgba(189,161,70,0);
+                background: $green;
                 list-style: none;
                 padding: 0;
                 position: absolute;
                 display: none;
                 li {
-                    padding-top: 1px;
+                    padding: 2px 6px;
                     float: none;
                     white-space: nowrap;
                     color: $black;
+                    font-family: $tag;
+                    font-size: 1em;
                 }
             }
             li:hover ul {
                 display: block;
             }
             li:hover li {
-                background: $dropdown;
+                background: $green;
             }
             li:hover ul li {
                 text-decoration: none;
