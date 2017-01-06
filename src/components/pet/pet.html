@@ -1,19 +1,18 @@
 <section ng-class="$ctrl.styles.pet">
     <div id="pet-overview">
         <h1 id="pet-header">{{$ctrl.pet.name}}</h1>
-        <p class="overview-stats">Weight: {{$ctrl.pet.weight}} pounds</p>
-        <p class="overview-stats">Age: {{$ctrl.pet.age}} years old</p>
-        <p class="overview-stats">Breed: {{$ctrl.pet.breed}}</p>
-        <p class="overview-stats">Exercise target: {{$ctrl.pet.exerciseNeed}} minutes per day</p>
-        <p>Adventures with {{$ctrl.pet.name}}:</p>
+        <p class="overview-stats">WEIGHT: {{$ctrl.pet.weight}} pounds</p>
+        <p class="overview-stats">AGE: {{$ctrl.pet.age}} years old</p>
+        <p class="overview-stats">BREED: {{$ctrl.pet.breed}}</p>
+        <p class="overview-stats">EXERCISE TARGET: {{$ctrl.pet.exerciseNeed}} minutes per day</p>
     </div>
     <div class="hikes">
         <table>
             <thead>
                 <tr>
-                    <td class="table-header">Date</td>
-                    <td class="table-header">Time</td>
-                    <td class="table-header">Activity</td>
+                    <td class="table-header">DATE</td>
+                    <td class="table-header">TIME</td>
+                    <td class="table-header">ACTIVITY</td>
                 </tr>
             </thead>
             <tbody>
@@ -24,7 +23,7 @@
                         <a href="#" editable-text="data.snapshotName" onaftersave="$ctrl.updateSnap(data, data.snapshotName)" class="name-link">{{ data.snapshotName || 'Name Your Hike' }}</a>
                     </td>
                     <td>
-                        <button ng-click="$ctrl.go(data)">Go</button>
+                        <button ng-click="$ctrl.go(data)">GO</button>
                     </td>
                     <td>
                         <button id="delete-snap-td" ng-click="$ctrl.removeSnap(data, $event)">X</button>
@@ -33,5 +32,5 @@
             </tbody>
         </table>
     </div>
-    <button class="delete-btn" ng-click="$ctrl.removePet()">Delete</button>
+    <button class="delete-btn" ng-click="$ctrl.removePet()">DELETE</button>
 </section>
