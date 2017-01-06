@@ -17,6 +17,7 @@
         </nav>
     </header>
     <div class="pet-info">
+        <h2>Data from Your Hike</h2>
         <div>
             <p>Distance: {{$ctrl.distance}} miles</p>
             <p>Hike Length: {{$ctrl.hikeLengthMin}} minutes</p>
@@ -25,12 +26,14 @@
         <div class="hike-length-chart">
             <p>Time Spent Hiking</p>
             <canvas id="lengthChart" width="400" height="400"></canvas>
+            <p>&nbsp;</p>
         </div>
         <div class="hike-distance-chart">
             <p>Distance Traveled</p>
             <canvas id="distanceChart" width="400" height="400"></canvas>
+            <p>&nbsp;</p>
         </div>
-        <div class="hike-length-chart">
+        <div class="sound-chart">
             <p>Sound Intensity</p>
             <canvas id="mySound" width="400" height="400"></canvas>
             <p>Time (s)</p>
