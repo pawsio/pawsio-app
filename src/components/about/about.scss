@@ -70,18 +70,19 @@
             
             // nested ul for nav dropdown
             li ul {
-                background: $green;
+                background: $header;
                 list-style: none;
                 padding: 0;
                 position: absolute;
                 display: none;
                 li {
-                    padding: 2px 6px;
+                    padding: 6px;
                     float: none;
                     white-space: nowrap;
                     color: $black;
                     font-family: $tag;
-                    font-size: 1em;
+                    font-size: 1.5em;
+                    text-align: center;
                 }
             }
             
@@ -90,18 +91,15 @@
             }
             
             li:hover li {
-                background: $green;
+                background: $background;
             }
             
             li:hover ul li {
                 text-decoration: none;
-            }
-            
-            li:hover ul li:hover {
-                background: $header;
+                background: $background;
             }
         }
-    }
+    }  
     footer {
         text-align: center;
         font-family: $heading;

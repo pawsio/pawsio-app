@@ -1,9 +1,9 @@
 @import 'colors';
 @import 'fonts';
 
-:local(.profile) {
+:local(.about) {
     margin: 0;
-
+    
     header {
         display: inline-block;
         margin: 0;
@@ -69,20 +69,19 @@
             }
             
             // nested ul for nav dropdown
-           li ul {
+            li ul {
                 background: $header;
                 list-style: none;
                 padding: 0;
                 position: absolute;
                 display: none;
                 li {
-                    padding: 6px;
+                    padding: 2px 6px;
                     float: none;
                     white-space: nowrap;
                     color: $black;
                     font-family: $tag;
-                    font-size: 1.5em;
-                    text-align: center;
+                    font-size: 1em;
                 }
             }
             
@@ -100,13 +99,13 @@
             }
         }
     }
-    
     footer {
         text-align: center;
         font-family: $heading;
         color: $black;
         padding: 5px 45px;
         position: relative;
+
         footer:hover {
             cursor: pointer;
             color: $green;
