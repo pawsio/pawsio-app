@@ -24,9 +24,6 @@ export default function routes($stateProvider, $urlRouterProvider) {
     $stateProvider.state({
         name: 'about.app',
         url: '/app',
-        // data: {
-        //     public: true
-        // },
         component: 'aboutApp'
     });
 
