@@ -1,22 +1,31 @@
 <section ng-class="$ctrl.styles.stats">
-    <header>
+   <header>
         <div>
-            <img src="/img/pawsio-logo-transparent2.png" alt="PawsIO Logo">
+            <h1>P a w s I O</h1>
+            <h2>Re-imagining pet fitness.</h2>
+            <!--<img src="/img/logo-alt.png" alt="PawsIO Logo">-->
         </div>
-        <h1>PawsIO</h1>
         <nav>
-            <li
+            <ul>
+                <li ng-if="$ctrl.isAuthenticated()" ui-sref="about" ng-click="$ctrl.logout()">LOGOUT</li>
+                <li ng-if="!$ctrl.isAuthenticated()" ui-sref="profile">SIGNIN</li>
+                <li ui-sref="profile">PROFILE
+                    <!--TODO: Redirect to stats debug-->
+                    <ul>
+                        <li 
                 ng-if="$ctrl.isAuthenticated()"
                 ui-sref="stats({ id: pet._id })"
-                ng-repeat="pet in $ctrl.pets">
-                    {{pet.name}}
-            </li>
-            <li ui-sref="profile">Profile</li>
-            <li ui-sref="about">About</li>
-            <li ng-if="$ctrl.isAuthenticated()" ui-sref="about" ng-click="$ctrl.logout()">Logout</li>
+                ng-repeat="pet in $ctrl.pets">{{ pet.name }}</li>
+                    </ul>
+                </li>
+                <li ui-sref="about">ABOUT</li>
+            </ul>
         </nav>
     </header>
-    <section>
-        <ui-view></ui-view>
-    </section>
+    
+    <ui-view></ui-view>
+    
+    <footer ui-sref="about.developers">
+        &copy; p a w s i o
+    </footer>
 </section>

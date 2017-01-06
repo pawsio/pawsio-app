@@ -2,80 +2,115 @@
 @import 'fonts';
 
 :local(.profile) {
-    margin: 10%, 5%;
+    margin: 0;
 
     header {
         display: inline-block;
-        background-color: $header;
         margin: 0;
-        position: fixed;
+        position: absolute;
         width: 100%;
         top: 0;
         left: 0;
         z-index: 1000;
-
+        background-color: $span;
+        
         div {
-            width: 50px;
-            margin: 2% 4%;
-            float: left;
+            width: 100%;
             padding: 0;
-            img {
-                display: block;
-                background-color: $logo;
-                border-radius: 100%;
-                max-width: 100%;
-            }
-        }
-        h1 {
             float: left;
-            margin: 4% 0;
+            
+            h1 {
+                margin: 2% 2% 1% 4%;
+                display: inline-block;
+                font-family: $body;
+                color: $background;
+                font-size: 2.3em;
+            }
+            
+            h2 {
+                display: inline-block;
+                font-family: $tag;
+                font-size: 1.4em;
+                color: $green;
+            }
+            
+            // logo 
+            // img {
+            //     display: inline-block;
+            //     border: 2px solid $green;
+            //     background-color: $background;
+            //     padding: 8px;
+            //     border-radius: 100%;
+            //     max-width: 2%;
+            // }
         }
-
+        
         nav ul {
             box-sizing: border-box;
             text-align: left; 
+            font-family: $body;
+            font-size: 1em;
             width: 100%;
             float: right;
             position: absolute;
             list-style: none;
-            margin: 5% 4%;
+            margin: 0;
+            
             li {
                 float: right;
-                margin: 0 4% 0 0;
+                margin: 4% 4% 0 0;
                 position: relative; 
-                display: block;    
+                display: block;  
+                color: $background;  
             }
+            
             li:hover {
                 color: $green;
-                text-decoration: underline;
             }
+            
             // nested ul for nav dropdown
             li ul {
-                background: $header;
-                background: rgba(189,161,70,0);
+                background: $green;
                 list-style: none;
                 padding: 0;
                 position: absolute;
-                right: -9999px;
+                display: none;
                 li {
-                    padding-top: 1px;
+                    padding: 2px 6px;
                     float: none;
                     white-space: nowrap;
                     color: $black;
+                    font-family: $tag;
+                    font-size: 1em;
                 }
             }
+            
             li:hover ul {
-                right: 0;
+                display: block;
             }
+            
             li:hover li {
-                background: $dropdown;
+                background: $green;
             }
+            
             li:hover ul li {
                 text-decoration: none;
             }
+            
             li:hover ul li:hover {
                 background: $header;
             }
+        }
+    }
+    footer {
+        text-align: center;
+        font-family: $heading;
+        color: $black;
+        padding: 5px 45px;
+        position: relative;
+        footer:hover {
+            cursor: pointer;
+            color: $green;
         }
     }
 }

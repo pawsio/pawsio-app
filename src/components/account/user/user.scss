@@ -1,9 +1,10 @@
-:local(.user) {
-	text-align: right;
-	
+@import 'colors';
+@import 'fonts';
+
+:local(.user) {	
 	span {
-		color: aqua;
-		border: 1px solid aqua;
+		font-family: $body;
+		color: $white;
 		padding: 10px;
 	}
 }

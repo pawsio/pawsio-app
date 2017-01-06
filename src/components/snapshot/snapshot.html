@@ -1,42 +1,48 @@
 <section ng-class="$ctrl.styles.snapshot">
     <header>
         <div>
-            <img src="/img/pawsio-logo-transparent2.png" alt="PawsIO Logo">
+            <h1>P a w s I O</h1>
+            <h2>Re-imagining pet fitness.</h2>
+            <!--<img src="/img/logo-alt.png" alt="PawsIO Logo">-->
         </div>
-        <h1>PawsIO</h1>
         <nav>
-            <li
+            <ul>
+                <li ng-if="$ctrl.isAuthenticated()" ui-sref="about" ng-click="$ctrl.logout()">LOGOUT</li>
+                <li ng-if="!$ctrl.isAuthenticated()" ui-sref="profile">SIGNIN</li>
+                <li ui-sref="profile">PROFILE
+                    <!--TODO: Redirect to stats debug-->
+                    <ul>
+                        <li 
                 ng-if="$ctrl.isAuthenticated()"
                 ui-sref="stats({ id: pet._id })"
-                ng-repeat="pet in $ctrl.pets">
-                    {{pet.name}}
-            </li>
-            <li ui-sref="profile">Profile</li>
-            <li ui-sref="about">About</li>
-            <li ng-if="$ctrl.isAuthenticated()" ui-sref="about" ng-click="$ctrl.logout()">Logout</li>
+                ng-repeat="pet in $ctrl.pets">{{ pet.name }}</li>
+                    </ul>
+                </li>
+                <li ui-sref="about">ABOUT</li>
+            </ul>
         </nav>
     </header>
     <div class="pet-info">
-        <h2>Data from Your Hike</h2>
-        <div>
-            <p>Distance: {{$ctrl.distance}} miles</p>
-            <p>Hike Length: {{$ctrl.hikeLengthMin}} minutes</p>
-            <p>Average Temp: {{$ctrl.averageTemp}} degrees</p>
+        <h2>SNAPSHOT DATA OVERVIEW</h2>
+        <div class="overview">
+            <p><span>Total Distance:</span> {{$ctrl.distance}} miles</p>
+            <p><span>Total Duration:</span> {{$ctrl.hikeLengthMin}} minutes</p>
+            <p><span>Avg Temp:</span> {{$ctrl.averageTemp}} degrees</p>
         </div>
         <div class="hike-length-chart">
-            <p>Time Spent Hiking</p>
+            <p>TIME SPENT</p>
             <canvas id="lengthChart" width="400" height="400"></canvas>
             <p>&nbsp;</p>
         </div>
         <div class="hike-distance-chart">
-            <p>Distance Traveled</p>
+            <p>DISTANCE TRAVELED</p>
             <canvas id="distanceChart" width="400" height="400"></canvas>
             <p>&nbsp;</p>
         </div>
         <div class="sound-chart">
-            <p>Sound Intensity</p>
+            <p>AMBIENT NOISE LEVELS</p>
             <canvas id="mySound" width="400" height="400"></canvas>
-            <p>Time (s)</p>
+            <p>TIME (S)</p>
         </div>
     </div>
 </section>
