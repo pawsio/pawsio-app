@@ -3,7 +3,6 @@
 
 :local(.about) {
     margin: 0;
-
     header {
         display: inline-block;
         margin: 0;
@@ -12,10 +11,9 @@
         top: 0;
         left: 0;
         z-index: 1000;
-
         div {
             width: 50px;
-            margin: 2% 4%;
+            margin: 1% 2% 0 4%;
             float: left;
             padding: 0;
             img {
@@ -23,17 +21,15 @@
                 border: 3px solid $green;
                 padding: 8px;
                 border-radius: 100%;
-                max-width: 75%;
+                max-width: 45%;
             }
         }
-        
         h1 {
             float: left;
-            margin: 2.5% 0 0 2%;
+            margin: 1.5% 0;
             font-family: $h1;
-            font-size: 2.3em;
+            font-size: 1.5em;
         }
-
         nav ul {
             box-sizing: border-box;
             text-align: left; 
@@ -43,7 +39,7 @@
             float: right;
             position: absolute;
             list-style: none;
-            margin: 4% 0;
+            margin: 2% 0;
             li {
                 float: right;
                 margin: 0 4% 0 0;

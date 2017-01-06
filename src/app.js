@@ -19,7 +19,8 @@ const app = angular.module('myApp', [
     uiRouter,
     angular.module('ui.router.state.events').name,
     defaultRoute,
-    dialog
+    dialog,
+    // ngAnimate
 ]);
 
 app.config(routes);
