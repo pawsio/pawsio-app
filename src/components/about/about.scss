@@ -11,40 +11,51 @@
         top: 0;
         left: 0;
         z-index: 1000;
+        background-color: $span;
         div {
-            width: 50px;
-            margin: 1% 2% 0 4%;
-            float: left;
+            width: 100%;
+            margin: 1%;
             padding: 0;
+            float: left;
             img {
-                display: block;
-                border: 3px solid $green;
+                display: inline-block;
+                border: 2px solid $green;
+                background-color: $background;
                 padding: 8px;
                 border-radius: 100%;
-                max-width: 45%;
+                max-width: 3%;
+                margin: 1% 0 0 0;
             }
-        }
-        h1 {
-            float: left;
-            margin: 1.5% 0;
-            font-family: $h1;
-            font-size: 1.5em;
+            h1 {
+                margin: 0;
+                display: inline-block;
+                font-family: $body;
+                color: $background;
+                font-size: 2em;
+            }
+            h2 {
+                font-family: $tag;
+                font-size: 1em;
+                margin: 0 0 0 6%;
+                color: $green;
+            }
         }
         nav ul {
             box-sizing: border-box;
             text-align: left; 
-            font-family: $h1;
+            font-family: $body;
             font-size: 1em;
             width: 100%;
             float: right;
             position: absolute;
             list-style: none;
-            margin: 2% 0;
+            margin: 0;
             li {
                 float: right;
                 margin: 0 4% 0 0;
                 position: relative; 
-                display: block;    
+                display: block;  
+                color: $background;  
             }
             li:hover {
                 color: $green;
