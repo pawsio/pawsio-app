@@ -13,19 +13,25 @@
                 <tr>
                     <td class="table-header">Date</td>
                     <td class="table-header">Time</td>
+                    <td class="table-header">Activity</td>
                 </tr>
             </thead>
             <tbody>
-                <tr class="dates" ng-repeat="data in $ctrl.dataPoints"
-                    ui-sref="snapshot({
-                        id: data._id,
-                        petId : $ctrl.pet._id
-                    })">
-                    <td>{{data.prettyDate}}</td>
-                    <td>{{data.time}}</td>
+                <tr class="dates" ng-repeat="data in $ctrl.dataPoints">
+                    <td class="highlight">{{data.prettyDate}}</td>
+                    <td class="highlight">{{data.time}}</td>
+                    <td class="highlight">
+                        <a href="#" editable-text="data.snapshotName" onaftersave="$ctrl.updateSnap(data, data.snapshotName)" class="name-link">{{ data.snapshotName || 'Name Your Hike' }}</a>
+                    </td>
+                    <td>
+                        <button ng-click="$ctrl.go(data)">Go</button>
+                    </td>
+                    <td>
+                        <button id="delete-snap-td" ng-click="$ctrl.removeSnap(data, $event)">X</button>
+                    </td>
                 </tr>
             </tbody>
         </table>
     </div>
-    <button class="delete-btn" ng-click="$ctrl.removePet(pet)">Delete</button>
+    <button class="delete-btn" ng-click="$ctrl.removePet()">Delete</button>
 </section>

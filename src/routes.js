@@ -24,9 +24,6 @@ export default function routes($stateProvider, $urlRouterProvider) {
     $stateProvider.state({
         name: 'about.app',
         url: '/app',
-        // data: {
-        //     public: true
-        // },
         component: 'aboutApp'
     });
 
@@ -95,6 +92,12 @@ export default function routes($stateProvider, $urlRouterProvider) {
             }],
             pet: ['$transition$', 'petsService', (t, pets) => {
                 return pets.getById(t.params().petId);
+            }],
+            pets: ['petsService', pets => {
+                return pets.getAll()
+                  .then(pets => {
+                      return pets.pets;
+                  });
             }]
         },
         component: 'snapshot'

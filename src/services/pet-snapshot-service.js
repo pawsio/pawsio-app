@@ -16,6 +16,10 @@ export default function petSnapshotService($http, apiUrl) {
         remove(id) {
             return $http.delete(`${apiUrl}/pet-snapshots/${id}`)
                 .then(res => res.data);
-        }      
+        },
+        updateSnap(id, data) {
+            return $http.put(`${apiUrl}/pet-snapshots/${id}`, data)
+            .then(res => res.data);
+        }
     };
 }

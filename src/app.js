@@ -11,6 +11,7 @@ import 'ng-dialog/css/ngDialog.css';
 import 'ng-dialog/css/ngDialog-theme-default.css';
 import http from './http';
 import auth from './auth';
+import 'angular-xeditable';
 
 
 const app = angular.module('myApp', [
@@ -20,15 +21,14 @@ const app = angular.module('myApp', [
     angular.module('ui.router.state.events').name,
     defaultRoute,
     dialog,
-    // ngAnimate
+    'xeditable'
 ]);
 
 app.config(routes);
 
 const dev = 'https://pawsio.herokuapp.com/api';
 
-// app.value('apiUrl', process.env.API_URL || '/api'); 
+// app.value('apiUrl', process.env.API_URL || '/api');
 app.value('apiUrl', dev);
 app.config(http);
 app.run(auth);
-

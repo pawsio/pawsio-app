@@ -5,6 +5,15 @@ $table-color: #ACDEFF; //light blue
 :local(.pet) {
     text-align: center;
 
+    .name-link {
+      text-decoration: none;
+      color: $table-color;
+    }
+
+    .name-link:visited {
+      color: $table-color;
+    }
+
     table {
         // background-color: $grey;
         width: 50%;
@@ -46,8 +55,9 @@ hr {
 }
 
 .dates:hover {
-  background-color: #607F94;
-
+  .highlight {
+    background-color: #607F94;
+  }
 }
 
 .dates:nth-child(even) {
@@ -77,3 +87,50 @@ hr {
 .overview-stats {
   padding-bottom: 20px;
 }
+
+#delete-snap-td {
+    height: 10px;
+    width: 10px;
+    font-size: 12px;
+    color: red;
+    padding: 0px;
+    background-color: $background;
+  }
+
+  .delete-snap-span:hover {
+    background-color: #607F94;
+  }
+
+// .highlight span span {
+//   background-color: black;
+//   height: 10px;
+//   width: 10px;
+//   // overflow: hidden;
+//
+// }
+.editable-controls {
+  position: relative;
+  top: -1px;
+  margin: 0;
+  padding: 0;
+  border: none;
+
+  // border: 1px solid black;
+}
+
+.editable-buttons {
+  display: none;
+}
+
+// .highlight form {
+//   position: relative;
+//   // top: 50%;
+//   // left: 35%;
+//   background-color: $grey;
+//   border-radius: 15px;
+//   width: 200px;
+//   height: 100px;
+//   border: 1px solid black;
+//   // overflow: hidden;
+//
+// }
