@@ -1,5 +1,6 @@
 import template from './pet.html';
 import styles from './pet.scss';
+import xeditable from 'angular-xeditable';
 
 export default {
     template,
@@ -9,6 +10,7 @@ export default {
         petData: '<'
     }
 };
+
 
 controller.$inject = [ 'petsService', '$state', 'petSnapshotService' ];
 
@@ -36,7 +38,6 @@ function controller(petsService, $state, snapService) {
     this.removePet = function(pet){
         var result = confirm("Are you sure you want to delete?");
         if (result) {
-    //Logic to delete the item
             petsService.removePet(this.pet._id)
               .then(() => {
                   $state.go('profile');
@@ -55,6 +56,19 @@ function controller(petsService, $state, snapService) {
                   this.dataPoints.splice(this.dataPoints.indexOf(snapshot), 1);
               });
         };
+    };
+
+    this.updateSnap = function(data, dataName){
+        console.log('data: ', data);
+        snapService.updateSnap(data._id, { snapshotName: dataName})
+        .then(() => {
+            let index = this.dataPoints.indexOf(data);
+            this.dataPoints[index].snapshotName = dataName;
+        });
+    };
+
+    this.go = function(data){
+        $state.go('snapshot', { id: data._id, petId: this.pet._id });
     };
 
 }
