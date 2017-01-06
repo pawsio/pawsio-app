@@ -3,7 +3,7 @@
         <div id="all-pets-content">
             <div class="user-pets">
                 <h2>YOUR PETS</h2>
-                    <button ng-click="add=!add" ng-hide="add">+ NEW</button>
+                    <button class="add-new" ng-click="add=!add" ng-hide="add">+ NEW</button>
                     <ul>
                         <li ui-sref="stats({ id: pet._id })" ng-repeat="pet in $ctrl.pets">{{pet.name}}</li>
                     </ul>

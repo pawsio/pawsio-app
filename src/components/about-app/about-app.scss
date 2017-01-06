@@ -8,11 +8,11 @@
 
 .span {
   position: absolute;
-  top: 500px;
+  top: 400px;
   left: 0;
   width: 100%;
   background-color: $span;
-  height: 250px;
+  height: 400px;
 }
 
 .about-app {
@@ -38,7 +38,7 @@ button {
     font-size: .75em;
     font-family: $body;
     cursor: pointer;
-    margin: 10% 0 1% 5%;
+    margin: 0 auto;
 }
 
 button:hover{
@@ -53,8 +53,8 @@ button:hover{
   display: flex;
   flex-direction: row;
   text-align: justify;
-  font-size: .8em;
-  margin: 37% 0;
+  font-size: 1em;
+  margin: 32% 0;
 }
 
 .landing {
