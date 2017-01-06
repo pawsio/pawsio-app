@@ -49,8 +49,8 @@
                     </div>
                 </div>
             </div>
-            <button ng-click="$ctrl.addPet()">SUBMIT</button>
-            <button ng-click="add=!add">CANCEL</button>
+            <button ng-show="add" ng-click="$ctrl.addPet()">SUBMIT</button>
+            <button ng-show="add" ng-click="add=!add">CANCEL</button>
         </div>
     </div>
 </section>
