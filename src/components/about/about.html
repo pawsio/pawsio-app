@@ -10,6 +10,7 @@
                 <li ng-if="$ctrl.isAuthenticated()" ui-sref="about" ng-click="$ctrl.logout()">LOGOUT</li>
                 <li ng-if="!$ctrl.isAuthenticated()" ui-sref="profile">SIGNIN</li>
                 <li ui-sref="profile">PROFILE
+                    <!--TODO: Redirect to stats debug-->
                     <ul>
                         <li 
                 ng-if="$ctrl.isAuthenticated()"
@@ -21,5 +22,10 @@
             </ul>
         </nav>
     </header>
+
     <ui-view></ui-view>
+
+    <footer ui-sref="about.developers">
+        &copy; p a w s i o
+    </footer>
 </section>

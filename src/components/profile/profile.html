@@ -1,12 +1,16 @@
 <section ng-class="$ctrl.styles.profile">
     <header>
         <div>
-            <img src="/img/pawsio-logo-transparent2.png" alt="PawsIO Logo">
+            <h1>P a w s I O</h1>
+            <h2>Re-imagining pet fitness.</h2>
+            <!--<img src="/img/logo-alt.png" alt="PawsIO Logo">-->
         </div>
-        <h1>P a w s I O</h1>
         <nav>
             <ul>
-                <li ui-sref="profile">ACCOUNT
+                <li ng-if="$ctrl.isAuthenticated()" ui-sref="about" ng-click="$ctrl.logout()">LOGOUT</li>
+                <li ng-if="!$ctrl.isAuthenticated()" ui-sref="profile">SIGNIN</li>
+                <li ui-sref="profile">PROFILE
+                    <!--TODO: Redirect to stats debug-->
                     <ul>
                         <li 
                 ng-if="$ctrl.isAuthenticated()"
@@ -15,12 +19,13 @@
                     </ul>
                 </li>
                 <li ui-sref="about">ABOUT</li>
-                <li ng-if="$ctrl.isAuthenticated()" ui-sref="about" ng-click="$ctrl.logout()">LOGOUT</li>
             </ul>
         </nav>
     </header>
-    <section>
-        <img src="/img/joyous-husky.jpg" width=100%/>
-        <ui-view></ui-view>
-    </section>
+
+    <ui-view></ui-view>
+
+    <footer ui-sref="about.developers">
+        &copy; p a w s i o
+    </footer>
 </section>
