@@ -6,6 +6,10 @@
   width: 100%; /* for IE 6 */
 }
 
+:local(.quickfix) {
+  margin-top: 20px;
+}
+
 .span {
   position: absolute;
   top: 400px;
@@ -21,7 +25,8 @@
     background-size: cover;
     background-repeat: no-repeat;
     overflow: hidden;
-    max-height: 700px;
+    // max-height: 700px;
+    min-height: 1000px;
     width: 100%;
     text-align: center;
     margin: 0;
@@ -53,7 +58,7 @@ button:hover{
   flex-direction: row;
   text-align: justify;
   font-size: 1em;
-  margin: 32% 0;
+  // margin: 32% 0;
   font-size: .8em;
 }
 
