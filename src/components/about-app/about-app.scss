@@ -1,35 +1,30 @@
 @import 'colors';
 @import 'fonts';
 
-.image {
+.about-app {
   position: relative;
   width: 100%; /* for IE 6 */
 }
 
-span {
+.span {
   position: absolute;
-  top: 200px;
+  top: 400px;
   left: 0;
   width: 100%;
+  background-color: $span;
+  height: 300px;
 }
 
-.image {
+.about-app {
     background-image: url("/img/paws.jpg");
     background-color: $background;
     background-size: cover;
     background-repeat: no-repeat;
     overflow: hidden;
-    height: 800px;
+    height: 700px;
     width: 100%;
     text-align: center;
-    margin: 10% 0 2% 0;
-
-    span {
-      background-color: $span;
-      color: $background;
-      font-family: $body;
-      height: 400px;
-    }
+    margin: 0;
 }
 
 button {
@@ -42,7 +37,7 @@ button {
     display: inline-block;
     font-size: .75em;
     font-family: $body;
-    margin: 4% 0;
+    margin: 23% 0;
     cursor: pointer;
 }
 
@@ -52,25 +47,33 @@ button:hover{
 }
 
 #landing-content {
-  background-color: $background;
-  font-family: 'Raleway', sans-serif;
+  position: relative;
+  font-family: $body;
+  color: $background;
   display: flex;
   flex-direction: row;
-  text-align: left;
-  // font-size: 20px;
+  text-align: justify;
+  font-size: .8em;
+  margin: 35% 0;
 }
 
 .landing {
-  padding: 0px 50px 30px;
-  border: .2px solid #c0c6d1;
-
+  padding: 3%;
+  width: 30%;
+  h1 {
+    font-family: $tag;
+    color: $green;
+    text-align: center;
+    font-size: 2em;
+  }
 }
 
 footer {
   text-align: center;
-  font-family: $h1;
+  font-family: $heading;
   color: $black;
   padding: 25px;
+  position: fixed;
 }
 
 footer:hover{
