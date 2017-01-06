@@ -9,9 +9,9 @@ export default {
     }
 };
 
-controller.$inject = ['userService'];
+controller.$inject = ['userService', '$state'];
 
-function controller(userService) {
+function controller(userService, $state) {
     this.styles = styles;
     this.logout = () => userService.logout();
     this.isAuthenticated = () => userService.isAuthenticated();
