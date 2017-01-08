@@ -1,0 +1,29 @@
+@import 'colors';
+@import 'fonts';
+
+:local(.developers) {
+    margin: 10% 2% 2%;
+    text-align: justify;
+    font-family: $body;
+
+    .profile {
+        margin: 4% 2%;
+        img {
+            width: 300px;
+            border-radius: 100%;
+            display: inline-block;
+        }
+    }
+
+    footer {
+        text-align: center;
+        padding: 70px 0px 0px 0px;
+    }
+
+    footer:hover{
+        cursor:pointer;
+        color: $green;
+    }
+
+
+}

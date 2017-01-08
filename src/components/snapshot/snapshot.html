@@ -1,0 +1,47 @@
+<section ng-class="$ctrl.styles.snapshot">
+    <header>
+        <div>
+            <h1>P a w s I O</h1>
+            <h2>Re-imagining pet fitness.</h2>
+            <!--<img src="/img/logo-alt.png" alt="PawsIO Logo">-->
+        </div>
+        <nav>
+            <ul>
+                <li ng-if="$ctrl.isAuthenticated()" ui-sref="about" ng-click="$ctrl.logout()">LOGOUT</li>
+                <li ng-if="$ctrl.isAuthenticated()" ui-sref="profile">PROFILE</li>
+                <li>YOUR DOGS
+                    <ul>
+                        <li 
+                ng-if="$ctrl.isAuthenticated()"
+                ui-sref="stats({ id: pet._id })"
+                ng-repeat="pet in $ctrl.pets">{{ pet.name }}</li>
+                    </ul>
+                </li>
+                <li ui-sref="about">HOME</li>
+            </ul>
+        </nav>
+    </header>
+    <div class="pet-info">
+        <h2>SNAPSHOT DATA OVERVIEW</h2>
+        <div class="overview">
+            <p><span>Total Distance:</span> {{$ctrl.distance}} miles</p>
+            <p><span>Total Duration:</span> {{$ctrl.hikeLengthMin}} minutes</p>
+            <p><span>Avg Temp:</span> {{$ctrl.averageTemp}} degrees</p>
+        </div>
+        <div class="hike-length-chart">
+            <p>TIME SPENT</p>
+            <canvas id="lengthChart" width="400" height="400"></canvas>
+            <p>&nbsp;</p>
+        </div>
+        <div class="hike-distance-chart">
+            <p>DISTANCE TRAVELED</p>
+            <canvas id="distanceChart" width="400" height="400"></canvas>
+            <p>&nbsp;</p>
+        </div>
+        <div class="sound-chart">
+            <p>AMBIENT NOISE LEVELS</p>
+            <canvas id="mySound" width="400" height="400"></canvas>
+            <p>TIME (S)</p>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,32 @@
+<section ng-class="$ctrl.styles.about">
+    <header>
+        <div>
+            <h1>P a w s I O</h1>
+            <h2>Re-imagining pet fitness.</h2>
+        </div>
+        <nav>
+            <ul>
+                <li ng-if="$ctrl.isAuthenticated()" ui-sref="about" ng-click="$ctrl.logout()">LOGOUT</li>
+                <li ng-if="!$ctrl.isAuthenticated()" ui-sref="profile">SIGNIN</li>
+                <li ng-if="$ctrl.isAuthenticated()" ui-sref="profile">PROFILE</li>
+                <li ng-if="$ctrl.isAuthenticated()">YOUR DOGS
+                    <ul>
+                        <li 
+                        ng-if="$ctrl.isAuthenticated()"
+                        ui-sref="stats({ id: pet._id })"
+                        ng-repeat="pet in $ctrl.pets">
+                            {{ pet.name }}
+                        </li>
+                    </ul>
+                </li>
+                <li ui-sref="about">HOME</li>
+            </ul>
+        </nav>
+    </header>
+
+    <ui-view></ui-view>
+
+    <footer ui-sref="about.developers">
+        &copy; p a w s i o
+    </footer>
+</section>

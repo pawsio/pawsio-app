@@ -1,0 +1,61 @@
+<section ng-class="$ctrl.styles.pets">
+    <div class="all-pets">
+        <div id="all-pets-content">
+            <div class="user-pets">
+                <h2>YOUR PETS</h2>
+                    <ul>
+                        <li ui-sref="stats({ id: pet._id })" ng-repeat="pet in $ctrl.pets">{{pet.name}}</li>
+                    </ul>
+                <button ng-click="add=!add" ng-hide="add">+ NEW</button>
+            </div>
+            <div class="current-pets" ng-class="$ctrl.styles.whitefix" ng-show="add">
+                <div>
+                    <h3>ADD A NEW PET</h3>
+                    <label>NAME:</label>
+                    <br>
+                    <input ng-model="$ctrl.name">
+                </div>
+                <div>
+                    <label>WEIGHT:</label>
+                    <br>
+                    <input ng-model="$ctrl.weight">
+                </div>
+                <div>
+                    <label>AGE:</label>
+                    <br>
+                    <input ng-model="$ctrl.age">
+                </div>
+                <div>
+                    <label>DAILY DISTANCE GOAL (miles): </label>
+                    <br>
+                    <input ng-model="$ctrl.distanceGoal">
+                </div>
+                <div>
+                    <label>BREED:</label>
+                    <br>
+                    <select
+                    ng-model="$ctrl.selectedBreed"
+                    ng-options="breed.breed for breed in $ctrl.breeds">
+                    ${{$ctrl.breed}}
+                    </select>
+                </div>
+                <div ng-hide="$ctrl.selectedBreed.value === 'Other'" ng-if="$ctrl.selectedBreed" ng-class="$ctrl.styles.message">
+                    <p>{{$ctrl.selectedBreed.breed}}s can require up to
+                    {{$ctrl.selectedBreed.exerciseNeed}} minutes of exercise per day. Each dog is unique, however, and this can vary significantly by individual. Please consult your veterinarian to make the best exercise choices for your pet!</p>
+                </div>
+                <div ng-show="$ctrl.selectedBreed.value === 'Other'">
+                    <div>
+                        <label>CUSTOM BREED:</label>
+                        <input ng-model="$ctrl.customBreed">
+                    </div>
+                    <div>
+                        <label>EXERCISE REQUIREMENTS:</label>
+                        <input ng-model="$ctrl.customExercise">
+                    </div>
+                </div>
+            </div>
+            <button ng-show="add" ng-click="$ctrl.addPet()">SUBMIT</button>
+            <button ng-show="add" ng-click="add=!add">CANCEL</button>
+        </div>
+    </div>
+</section>

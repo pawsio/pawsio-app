@@ -1,0 +1,133 @@
+@import 'colors';
+@import 'fonts';
+
+:local(.pet) {
+    margin: 10% 2% 0 2%;
+
+    .name-link {
+      text-decoration: none;
+    }
+
+    .name-link:visited {
+      color: $green;
+    }
+
+    table {
+        width: 50%;
+        margin: 2% auto 0;
+        border-collapse: collapse;
+    }
+
+    thead {
+        font-weight: bold;
+    }
+
+    tbody {
+        cursor: pointer;
+    }
+
+    .hikes {
+        width: 57%;
+        margin: 2%;
+        float: right;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+}
+
+hr {
+  border: 1px solid $black;
+}
+
+.dates {
+  font-family: $body;
+  border-radius: 25px;
+  padding: 20px;
+  width: 600px;
+  height: 35px;
+}
+
+.dates:hover {
+  .highlight {
+    background-color: $grey;
+  }
+}
+
+// .dates:nth-child(even) {
+//   color: $green;
+// }
+
+.delete-btn {
+  background-color: #c91c1c;
+}
+
+#pet-overview {
+  font-family: $body;
+  display: inline-block;
+  width: 37%;
+  margin: 0 auto;
+  #pet-header {
+    font-size: 20px;
+    color: $green;
+  }
+}
+
+.table-header {
+  color: $green;
+  border-bottom: 2px solid black;
+  font-size: 20px;
+}
+
+.overview-stats {
+  padding-bottom: 20px;
+}
+
+#delete-snap-td {
+    height: 10px;
+    width: 10px;
+    font-size: 12px;
+    color: red;
+    padding: 0px;
+    background-color: $background;
+  }
+
+  .delete-snap-span:hover {
+    background-color: $grey;
+  }
+
+// .highlight span span {
+//   background-color: black;
+//   height: 10px;
+//   width: 10px;
+//   // overflow: hidden;
+//
+// }
+
+.editable-controls {
+  position: relative;
+  top: -1px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  // border: 1px solid black;
+}
+
+.editable-buttons {
+  display: none;
+}
+
+// .highlight form {
+//   position: relative;
+//   // top: 50%;
+//   // left: 35%;
+//   background-color: $grey;
+//   border-radius: 15px;
+//   width: 200px;
+//   height: 100px;
+//   border: 1px solid black;
+//   // overflow: hidden;
+//
+// }

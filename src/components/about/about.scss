@@ -1,0 +1,115 @@
+@import 'colors';
+@import 'fonts';
+
+:local(.about) {
+    margin: 0;
+    
+    header {
+        display: inline-block;
+        margin: 0;
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        background-color: $span;
+        
+        div {
+            width: 100%;
+            padding: 0;
+            float: left;
+            
+            h1 {
+                margin: 2% 2% 1% 4%;
+                display: inline-block;
+                font-family: $body;
+                color: $background;
+                font-size: 2.3em;
+            }
+            
+            h2 {
+                display: inline-block;
+                font-family: $tag;
+                font-size: 1.4em;
+                color: $green;
+            }
+            
+            // logo 
+            // img {
+            //     display: inline-block;
+            //     border: 2px solid $green;
+            //     background-color: $background;
+            //     padding: 8px;
+            //     border-radius: 100%;
+            //     max-width: 2%;
+            // }
+        }
+        
+        nav ul {
+            box-sizing: border-box;
+            text-align: left; 
+            font-family: $body;
+            font-size: 1em;
+            width: 100%;
+            float: right;
+            position: absolute;
+            list-style: none;
+            margin: 0;
+            
+            li {
+                float: right;
+                margin: 4% 4% 0 0;
+                position: relative; 
+                display: block;  
+                color: $background;  
+            }
+            
+            li:hover {
+                color: $green;
+            }
+            
+            // nested ul for nav dropdown
+            li ul {
+                background: $header;
+                list-style: none;
+                padding: 0;
+                position: absolute;
+                display: none;
+                li {
+                    padding: 6px;
+                    float: none;
+                    white-space: nowrap;
+                    color: $black;
+                    font-family: $tag;
+                    font-size: 1.5em;
+                    text-align: center;
+                }
+            }
+            
+            li:hover ul {
+                display: block;
+            }
+            
+            li:hover li {
+                background: $background;
+            }
+            
+            li:hover ul li {
+                text-decoration: none;
+                background: $background;
+            }
+        }
+    }  
+    footer {
+        text-align: center;
+        font-family: $heading;
+        color: $black;
+        padding: 5px 45px;
+        position: relative;
+
+        footer:hover {
+            cursor: pointer;
+            color: $green;
+        }
+    }
+}

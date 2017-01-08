@@ -1,0 +1,10 @@
+@import 'colors';
+@import 'fonts';
+
+:local(.user) {	
+	span {
+		font-family: $body;
+		color: $white;
+		padding: 10px;
+	}
+}
