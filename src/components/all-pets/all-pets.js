@@ -14,6 +14,10 @@ controller.$inject = [ 'petsService', '$state' ];
 function controller(petsService, $state){
     this.styles = styles;
 
+    // better to use a single object:
+    // this.reset = () => this.pet = {};
+    // and let the bindings create the properties
+
     this.reset = () => {
         this.name = '';
         this.age = '';
@@ -26,6 +30,7 @@ function controller(petsService, $state){
 
     this.reset();
 
+    // should come from db?
     this.breeds = [
       { breed: 'Working Dog', exerciseNeed: 120 },
       { breed: 'Terrier', exerciseNeed: 110 },
@@ -40,8 +45,6 @@ function controller(petsService, $state){
 
     this.addPet = function(){
 
-        let breedName = '';
-        let exercise = null;
         let petToAdd = {
             name: this.name,
             age: this.age,
@@ -54,8 +57,14 @@ function controller(petsService, $state){
         petsService.addPet(petToAdd)
           .then(savedPet => {
               this.pets.push(savedPet);
+              // 3. better to just do here, synchronous activity:
+              this.reset();
           })
-          .then(this.reset());
+          // 1. this calls the reset function and passes the return
+          // as the callback :(
+          // .then(this.reset());
+          // 2. this is what you meant:
+          // .then(() => this.reset());
     };
 
 }

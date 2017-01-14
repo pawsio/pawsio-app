@@ -47,8 +47,11 @@ function controller(kineticsService, petSnapshotService, temperatureService, use
     this.$onInit = function () {
         console.log('distanceGoal: ', this.pet.distanceGoal);
         let temp = temperatureService.getAvgTemp(this.snapshot.dataPayload);
+        // why isn't this part of the getAvgTemp service method?
         this.averageTemp = Math.round(temp);
 
+        // hmm, this seems odd here. Logic seems duplicative of some of services.
+        // I wonder if data on server should be better massaged
         this.snapshot.dataPayload.forEach((element, index, array) => { 
             this.threshold.push(element.threshold);
             this.time.push((Date.parse(element.date) - Date.parse(array[0].date))/1000); 
@@ -59,6 +62,7 @@ function controller(kineticsService, petSnapshotService, temperatureService, use
         kineticsService
             .getVelocity(this.snapshot.dataPayload)
             .then(velArr => {
+                // again, not sure why this isn't part of service
                 let rawHikeLength = velArr[(velArr.length) - 1].timeStamp;
                 if ((rawHikeLength/60) < .5) {
                     this.hikeLengthMin = Math.ceil(rawHikeLength/60);

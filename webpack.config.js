@@ -2,6 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
+// either use this instance or stick with static methods, but don't mix the two
 const cssExtract = new ExtractTextPlugin('main.css');
 
 module.exports = {
