@@ -1,6 +1,8 @@
 import template from './stats.html';
 import styles from './stats.scss';
 
+// duplicate of "profile" component ????
+
 export default {
     template,
     controller,

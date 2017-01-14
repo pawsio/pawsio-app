@@ -28,6 +28,7 @@ app.config(routes);
 
 const dev = 'https://pawsio.herokuapp.com/api';
 
+// need to use the DefinePlugin or EnvironmentPlugin in webpack to manage url
 // app.value('apiUrl', process.env.API_URL || '/api');
 app.value('apiUrl', dev);
 app.config(http);

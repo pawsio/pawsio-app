@@ -12,6 +12,7 @@ export default function routes($stateProvider, $urlRouterProvider) {
             pets: ['petsService', pets => {
                 return pets.getAll()
                   .then(pets => {
+                      // pets.pets? sounds like model should be cleaned up or service should hide this bit...
                       return pets.pets;
                   });
             }]
@@ -39,6 +40,10 @@ export default function routes($stateProvider, $urlRouterProvider) {
         abstract: true,
         default: '.pets',
         resolve: {
+            // since 'about', 'profile', and 'snapshot' use the same pets data,
+            // you could create single top level 'app' state that applies to both.
+            // as you currently have it, there are two pets arrays in memory and
+            // you loose syncing data across staes 
             pets: ['petsService', pets => {
                 return pets.getAll()
                   .then(pets => {

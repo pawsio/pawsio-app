@@ -18,7 +18,11 @@ function controller(petsService, $state, snapService) {
     this.styles = styles;
 
     this.$onInit = function () {
+        // time to work on model/variable naming when
+        // you have meanless names like this that only describe data structure
         let dataArr = this.petData.data;
+
+        // Data formatting logic could be moved into custom filter
         for (var i = 0; i < dataArr.length; i++) {
             let longDate = dataArr[i].date;
             let dateChunk = longDate.slice(0, 10);

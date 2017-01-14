@@ -1,3 +1,5 @@
+// these calculations seem deterministic. Could they be done
+// on save of data on the server?
 export default function kineticsService() {
     return {
         getVelocity(accelArray) {

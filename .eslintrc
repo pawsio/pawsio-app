@@ -1,3 +1,5 @@
+// you probably want to extend eslint recommended or at least put
+// in no unused vars and other syntax help
 {
     "parserOptions": {
 		"ecmaVersion": 6,
