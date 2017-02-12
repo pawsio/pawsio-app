@@ -1,6 +1,6 @@
 {
   "name": "pawsio-app",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Client side code for pawsio app.",
   "main": "index.js",
   "scripts": {

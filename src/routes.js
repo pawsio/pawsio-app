@@ -8,14 +8,6 @@ export default function routes($stateProvider, $urlRouterProvider) {
         data: {
             public: true
         },
-        resolve: {
-            pets: ['petsService', pets => {
-                return pets.getAll()
-                  .then(pets => {
-                      return pets.pets;
-                  });
-            }]
-        },
         abstract: true,
         default: '.app',
         component: 'about'
@@ -75,6 +67,32 @@ export default function routes($stateProvider, $urlRouterProvider) {
             }]
         },
         component: 'stats'
+    });
+
+    $stateProvider.state({
+        name: 'remy',
+        url: '/remy',
+        data: {
+            public: true
+        },
+        component: 'remy'
+    });
+
+    $stateProvider.state({
+        name: 'publicsnapshot',
+        url: '/publicsnapshot/:id',
+        data: {
+            public: true
+        },
+        resolve: {
+            snapshot: ['$transition$', 'remyService', (t, remy) => {
+                return remy.get(t.params().id);
+            }],
+            pet: ['remyService', (remy) => {
+                return remy.getRemy();
+            }]
+        },
+        component: 'publicSnapshot'
     });
 
     $stateProvider.state({

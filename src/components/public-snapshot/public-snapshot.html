@@ -9,12 +9,13 @@
             <ul>
                 <li ng-if="$ctrl.isAuthenticated()" ui-sref="about" ng-click="$ctrl.logout()">LOGOUT</li>
                 <li ng-if="$ctrl.isAuthenticated()" ui-sref="profile">PROFILE</li>
-                <li>YOUR DOGS
+                <li ng-if="!$ctrl.isAuthenticated()" ui-sref="profile">SIGNIN</li>
+                <li ng-if="$ctrl.isAuthenticated()">YOUR DOGS
                     <ul>
-                        <li 
-                ng-if="$ctrl.isAuthenticated()"
-                ui-sref="stats({ id: pet._id })"
-                ng-repeat="pet in $ctrl.pets">{{ pet.name }}</li>
+                        <li ng-if="$ctrl.isAuthenticated()"
+                            ui-sref="stats({ id: pet._id })"
+                            ng-repeat="pet in $ctrl.pets">{{ pet.name }}
+                        </li>
                     </ul>
                 </li>
                 <li ui-sref="remy">REMY</li>
