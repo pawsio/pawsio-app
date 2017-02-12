@@ -8,7 +8,6 @@ export default function petSnapshotService($http, apiUrl) {
             return $http.get(`${apiUrl}/pet-snapshots/${animalId}/all`)
                 .then(res => res.data);
         },
-
         get(id) {
             return $http.get(`${apiUrl}/pet-snapshots/${id}`)
                 .then(res => res.data);
@@ -22,4 +21,4 @@ export default function petSnapshotService($http, apiUrl) {
             .then(res => res.data);
         }
     };
-}
+};

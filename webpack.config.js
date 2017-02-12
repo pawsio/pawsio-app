@@ -7,8 +7,8 @@ const cssExtract = new ExtractTextPlugin('main.css');
 module.exports = {
     entry: './src/app.js',
     output: {
-        path: './build',
-        // path: '../pawsio-server/public',
+        // path: './build',
+        path: '../pawsio-server/public',
         filename: 'main.js'
     },
     devtool: 'source-map',

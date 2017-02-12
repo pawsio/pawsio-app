@@ -26,9 +26,10 @@ const app = angular.module('myApp', [
 
 app.config(routes);
 
-const dev = 'https://pawsio.herokuapp.com/api';
+// const dev = 'https://pawsio.herokuapp.com/api';
+const dev = 'http://localhost:3000/api';
 
-// app.value('apiUrl', process.env.API_URL || '/api');
-app.value('apiUrl', dev);
+app.value('apiUrl', process.env.API_URL || '/api');
+// app.value('apiUrl', dev);
 app.config(http);
 app.run(auth);

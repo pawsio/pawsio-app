@@ -15,10 +15,10 @@ describe('PawsIO App', function() {
             welcome.get();
         });
 
-        it('defaults to welcome page', function() {
+        it('defaults to about page', function() {
 
-            expect(welcome.url).toBe('/welcome');
-            expect(welcome.stateComponent).toEqual('welcome');
+            expect(welcome.url).toBe('/about/app');
+            expect(welcome.stateComponent).toEqual('about');
 
         });
 

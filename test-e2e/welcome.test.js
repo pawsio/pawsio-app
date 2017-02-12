@@ -23,8 +23,8 @@ describe('PawsIO App', function () {
 
         it('defaults to welcome page', function () {
 
-            expect(welcome.url).toBe('/welcome');
-            expect(welcome.stateComponent).toEqual('welcome');
+            expect(welcome.url).toBe('/about/app');
+            expect(welcome.stateComponent).toEqual('about');
         });
     });
 });
